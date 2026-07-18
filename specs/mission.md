@@ -6,7 +6,7 @@ OpenAPI Studio helps small API teams turn an OpenAPI document into a dependable 
 
 ## Commercial Goal
 
-Reach the first **$1,000 MRR** through a narrow, reliable paid product before pursuing broad legacy parity. Optimize for activation, repeated use, conversion, and retention—not feature count.
+Reach the first **$1,000 MRR** through a narrow, reliable paid product before pursuing broad legacy parity. Optimize for activation, repeated use, conversion, and retention, not feature count.
 
 ## Primary Customer
 

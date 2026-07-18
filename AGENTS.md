@@ -25,7 +25,11 @@ Stop and request a product decision when requirements conflict, scope expands, s
 - Use Valibot at external trust boundaries and `drizzle-orm/valibot` only for persistence validation; public contracts must not be generated from database schemas.
 - Keep server-only code, bindings, credentials, and database access outside client bundles.
 - Prefer platform features and existing dependencies. Add abstractions only for a current approved requirement.
-- Test public behavior, authorization, failure paths, and data boundaries—not implementation details.
+- Test public behavior, authorization, failure paths, and data boundaries, not implementation details.
+
+### Content punctuation
+
+- Never use em dashes (`—`) in user-facing content or metadata. Use periods, commas, colons, or parentheses instead.
 - Never commit secrets or local environment files.
 
 ## Architecture and Ownership

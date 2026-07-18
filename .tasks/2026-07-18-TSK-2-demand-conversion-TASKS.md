@@ -1,4 +1,4 @@
-# TSK-2 — Demand and Conversion Tasks
+# TSK-2: Demand and Conversion Tasks
 
 | Field        | Value                                                     |
 | ------------ | --------------------------------------------------------- |
@@ -11,7 +11,7 @@
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-2.
 
-## TG-001 — Positioning and Offer
+## TG-001: Positioning and Offer
 
 - **Owner:** Product owner
 - **Dependencies:** TSK-1, approved TSK-2 specification
@@ -22,7 +22,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Validation command:** Product content review against the approved specification.
 - **Evidence:** Product owner approved the positioning, revised $29/workspace/month hypothesis, `pitechae@gmail.com` contact flow, qualification prompts, Tailwind, and first-party Cloudflare event logging on 2026-07-18.
 
-## TG-002 — Marketing Page
+## TG-002: Marketing Page
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001
@@ -33,7 +33,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Validation command:** `bun run check` plus responsive, keyboard, and JavaScript-disabled browser review.
 - **Evidence:** The prerendered page implements the approved buyer, problem, pilot offer, $29 hypothesis, RFC-safe qualified mailto flow, and truthful pilot terms. Tailwind 4.3.3 is the only UI system. Desktop and 390px screenshots were reviewed; Chromium passes axe, keyboard order, JavaScript-disabled, CTA, metadata, and horizontal-overflow checks. GitHub confirms the linked repository is public.
 
-## TG-003 — Measurement and Operating Ledger
+## TG-003: Measurement and Operating Ledger
 
 - **Dependencies:** TG-001, approved analytics decision
 - **Owner:** Main agent
@@ -44,7 +44,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Validation command:** Event payload inspection and operating-ledger review.
 - **Evidence:** Strict Valibot events allow only page view, design-partner click, and repository click. The endpoint requires same-origin browser metadata, rejects unsupported content types and extra fields, and streams at most 64 bytes. Tests cover valid, schema-invalid, cross-origin, oversized, and unsupported requests. Analytics failure cannot block CTA behavior. `.docs/design-partner-operating-ledger.md` stores aggregates only.
 
-## TG-004 — Preview Acceptance
+## TG-004: Preview Acceptance
 
 - **Owner:** Main agent
 - **Dependencies:** TG-002, TG-003

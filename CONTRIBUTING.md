@@ -6,7 +6,7 @@ OpenAPI Studio is an evidence-gated founding build. Discuss substantial product 
 
 1. Read `AGENTS.md`, `PRODUCT.md`, `DESIGN.md`, and `specs/roadmap.md`.
 2. Keep changes inside one small vertical slice.
-3. Preserve truthful product boundaries—do not imply unfinished capabilities exist.
+3. Preserve truthful product boundaries. Do not imply unfinished capabilities exist.
 4. Do not include real API contracts, customer information, credentials, or generated secrets.
 5. Run `bun run check`.
 

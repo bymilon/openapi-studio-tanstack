@@ -6,7 +6,7 @@ export const Route = createFileRoute('/')({
   component: MarketingHome,
   head: () => ({
     meta: [
-      { title: 'OpenAPI Studio — Dependable OpenAPI workflows' },
+      { title: 'OpenAPI Studio: Dependable OpenAPI workflows' },
       {
         name: 'description',
         content:
@@ -14,7 +14,7 @@ export const Route = createFileRoute('/')({
       },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'OpenAPI Studio' },
-      { property: 'og:title', content: 'OpenAPI Studio — Contract changes, made reviewable' },
+      { property: 'og:title', content: 'OpenAPI Studio: Contract changes, made reviewable' },
       {
         property: 'og:description',
         content:
@@ -34,10 +34,10 @@ export const Route = createFileRoute('/')({
       { property: 'og:image:height', content: '630' },
       {
         property: 'og:image:alt',
-        content: 'OpenAPI Studio — Contract changes, made reviewable',
+        content: 'OpenAPI Studio: Contract changes, made reviewable',
       },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'OpenAPI Studio — Contract changes, made reviewable' },
+      { name: 'twitter:title', content: 'OpenAPI Studio: Contract changes, made reviewable' },
       {
         name: 'twitter:description',
         content:

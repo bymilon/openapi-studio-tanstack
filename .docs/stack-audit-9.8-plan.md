@@ -127,4 +127,4 @@ TSK-1 may begin only when all are true:
 - TG-001 has an owner and exact validation commands.
 - No cloud resource, secret, production database, deployment, push, or merge is implicitly authorized.
 
-Meeting this gate raises the design to approximately **9.0/10**. The remaining score must be earned through clean-install, CI, Worker preview, migration, security, rollback, and production evidence—not documentation.
+Meeting this gate raises the design to approximately **9.0/10**. The remaining score must be earned through clean-install, CI, Worker preview, migration, security, rollback, and production evidence, not documentation.

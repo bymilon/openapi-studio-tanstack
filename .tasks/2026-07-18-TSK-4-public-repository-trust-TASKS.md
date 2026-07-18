@@ -1,22 +1,22 @@
-# TSK-4 — Public Repository Trust
+# TSK-4: Public Repository Trust
 
 **Overall status:** DONE
 
-## TG-001 — Public narrative and boundaries
+## TG-001: Public narrative and boundaries
 
 - **Owner:** Main agent
 - **Status:** DONE
 - **Acceptance:** README and root guidance explain the problem, evidence, limitations, contribution, security, and source terms.
 - **Evidence:** Product-first README, real website screenshot, explicit available/unavailable table, `CONTRIBUTING.md`, `SECURITY.md`, and source-available `LICENSE` are present.
 
-## TG-002 — GitHub presentation
+## TG-002: GitHub presentation
 
 - **Owner:** Main agent
 - **Status:** DONE
 - **Acceptance:** Description, homepage, topics, and landing-page repository language are accurate.
 - **Evidence:** GitHub description, preview homepage, ten relevant topics, private vulnerability reporting, and protected `main` are configured. Landing copy now says design-partner research, price hypothesis, proposed workflow, and public build.
 
-## TG-003 — Validation
+## TG-003: Validation
 
 - **Owner:** Main agent
 - **Status:** DONE

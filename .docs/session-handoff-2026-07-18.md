@@ -1,10 +1,10 @@
-# Session Handoff — 2026-07-18
+# Session Handoff: 2026-07-18
 
 ## Restart Context
 
 The active repository is `D:\PROJECTS\OMAZYAI\OPENAPISTUDIO\openapi-studio-tanstack`, not the legacy `openapi-studio` workspace. Repository: `github.com/bymilon/openapi-studio-tanstack` (public).
 
-The product is a fresh OpenAPI Studio rebuild for small API teams. Architecture is a feature-based, flattened vertical-slice modular monolith—not a monorepo. The delivery stack is TanStack Start with Solid, Bun, Vite, Tailwind CSS, Hono where an HTTP boundary benefits from it, Valibot, Drizzle, Turso/libSQL, and Cloudflare Workers. Oxlint and Oxfmt are the quality tools.
+The product is a fresh OpenAPI Studio rebuild for small API teams. Architecture is a feature-based, flattened vertical-slice modular monolith, not a monorepo. The delivery stack is TanStack Start with Solid, Bun, Vite, Tailwind CSS, Hono where an HTTP boundary benefits from it, Valibot, Drizzle, Turso/libSQL, and Cloudflare Workers. Oxlint and Oxfmt are the quality tools.
 
 Read `AGENTS.md`, `specs/mission.md`, `specs/tech-stack.md`, and `specs/roadmap.md` before acting. Follow spec-driven development and keep `.tasks/` as the execution source of truth. Avoid speculative abstractions and feature-parity work.
 

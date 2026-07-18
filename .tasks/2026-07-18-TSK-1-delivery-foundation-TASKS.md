@@ -1,4 +1,4 @@
-# TSK-1 — Delivery Foundation Tasks
+# TSK-1: Delivery Foundation Tasks
 
 | Field        | Value                                                     |
 | ------------ | --------------------------------------------------------- |
@@ -11,7 +11,7 @@
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-1.
 
-## TG-001 — Runtime Skeleton
+## TG-001: Runtime Skeleton
 
 - **Owner:** Main agent
 - **Dependencies:** Complete
@@ -22,7 +22,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Validation command:** `bun run check`; then time-bounded `bun run preview`, `GET /health`, dependency inspection, and bundle inspection.
 - **Evidence:** `bun install --frozen-lockfile`, `bun run check`, and `git diff --check` pass on Bun 1.3.14. The production build prerenders `/` and emits the Worker entry. Built preview smoke checks return `GET /health` 200 with `{"status":"ok"}`, `HEAD /health` 200, `POST /health` 405, and `/` 200. Independent review findings were resolved; no deployment occurred.
 
-## TG-002 — Database Baseline
+## TG-002: Database Baseline
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001
@@ -33,7 +33,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Validation command:** `bun run db:check`, `bun run db:smoke`, and `bun run check`.
 - **Evidence:** Drizzle ORM 0.45.2, Drizzle Kit 0.31.10, and `@libsql/client` 0.17.4 are pinned. `db:check` validates the generated migration graph. `db:smoke` applies the committed migration twice to in-memory libSQL, then completes a typed insert/query. TanStack's `server-only` guard protects the credential-bearing factory. On 2026-07-18, `db:integration` applied the migration twice and completed the same query against disposable Turso database `oas-tsk1-val-6bfd6949` through `@libsql/client/web`; the one-day token remained in process memory and the database was destroyed immediately afterward.
 
-## TG-003 — Automated Quality Gates
+## TG-003: Automated Quality Gates
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001, TG-002
@@ -44,7 +44,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Validation command:** `bun run check`; then observe the required GitHub pull-request run and a temporary deliberately failing validation commit.
 - **Evidence:** Local `bun ci` and `bun run check` pass. The workflow uses SHA-pinned official actions, Bun 1.3.14, Ubuntu 24.04, read-only repository permissions, concurrency cancellation, a ten-minute timeout, no secrets, and no deployment job. PR #1 run `29637211097` passed; deliberate failing commit `51d1be9` was rejected by run `29637241493`; revert commit `072bdb2` restored green run `29637270052`. Independent review found no workflow security blocker.
 
-## TG-004 — Preview and Observability
+## TG-004: Preview and Observability
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001, TG-003
@@ -65,4 +65,4 @@ TSK-1 completed its approved implementation and preview-validation scope on 2026
 - **Risk:** Medium for local scaffold; high for credentials, data, and deployment.
 - **Routing:** Main agent writes; independent agents research, review, and validate. Models remain unpinned and are routed by task risk.
 - **Retry limit:** Stop and re-triage after two materially similar failed approaches.
-- **Metrics:** Record accepted outcome, checks, review findings, retries, interventions, and deployment health—not lines of code or token volume.
+- **Metrics:** Record accepted outcome, checks, review findings, retries, interventions, and deployment health, not lines of code or token volume.

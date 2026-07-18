@@ -1,6 +1,6 @@
 # Design-Partner Operating Ledger
 
-Track aggregates only. Keep names, emails, company details, and conversation notes in a private approved system—not Git.
+Track aggregates only. Keep names, emails, company details, and conversation notes in a private approved system, not Git.
 
 ## Qualified Prospect
 
@@ -18,7 +18,7 @@ A qualified prospect is part of a small software team that actively maintains an
 
 | Week | Landing visitors | CTA clicks | Qualified replies | Conversations | Design partners | $29 willingness-to-pay | Dominant objection | Decision       |
 | ---- | ---------------: | ---------: | ----------------: | ------------: | --------------: | ---------------------: | ------------------ | -------------- |
-| —    |                0 |          0 |                 0 |             0 |               0 |                      0 | —                  | Start outreach |
+| TBD  |                0 |          0 |                 0 |             0 |               0 |                      0 | None               | Start outreach |
 
 ## Conversation Prompts
 

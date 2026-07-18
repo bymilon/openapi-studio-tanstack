@@ -75,8 +75,8 @@ export function MarketingHome() {
               </a>
             </div>
             <p class="availability">
-              Interviews are free. A product pilot and $29/workspace/month price are hypotheses—not
-              available yet.
+              Interviews are free. A product pilot and $29/workspace/month price are hypotheses.
+              They are not available yet.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export function MarketingHome() {
               <strong>Needs a decision</strong>
             </div>
             <figcaption>
-              Illustrative prototype—not a screenshot of a currently available editor.
+              Illustrative prototype. This is not a screenshot of a currently available editor.
             </figcaption>
           </figure>
         </section>
@@ -130,7 +130,7 @@ export function MarketingHome() {
           <p class="section-label">The problem</p>
           <div>
             <h2>Raw YAML tells you what moved. It rarely tells you what it costs.</h2>
-            <p>The painkiller is a reviewable decision—not another text editor.</p>
+            <p>The painkiller is a reviewable decision, not another text editor.</p>
           </div>
         </div>
       </section>
@@ -171,15 +171,15 @@ export function MarketingHome() {
         <div class="shell evidence-grid">
           <div>
             <p class="section-label">Current build status</p>
-            <h2>See what exists today—and what comes next.</h2>
+            <h2>See what exists today and what comes next.</h2>
           </div>
           <div class="evidence-copy">
             <p>
               OpenAPI Studio is in demand validation, not a working editor. Today’s repository
               contains this website, delivery checks, preview infrastructure, and identifier-free
               conversion measurement. OpenAPI 3.0/3.1 import, validation, diff review, and
-              publishing are roadmap work—not implemented yet. No invented customers. No fake
-              screenshots. No checkout.
+              publishing are roadmap work. They are not implemented yet. No invented customers. No
+              fake screenshots. No checkout.
             </p>
             <a href={repositoryHref} onClick={() => recordConversion('repository_clicked')}>
               Follow the public build <span>↗</span>
@@ -213,8 +213,8 @@ export function MarketingHome() {
             <p class="offer-trust">
               Built and run by{' '}
               <a href="https://github.com/bymilon">Milon Biswas, independent founder</a>. Email only
-              the problem and workflow first—no contract upload or confidential material. Personal
-              reply within two business days.
+              the problem and workflow first. Do not upload a contract or confidential material.
+              Personal reply within two business days.
             </p>
             <a
               class="button button-light"

@@ -10,7 +10,7 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
   await page.goto('/')
   await pageView
 
-  await expect(page).toHaveTitle('OpenAPI Studio — Dependable OpenAPI workflows')
+  await expect(page).toHaveTitle('OpenAPI Studio: Dependable OpenAPI workflows')
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
     'content',
     'https://openapi-studio-tanstack-preview.pibin.workers.dev/og/openapi-studio-og.png',
@@ -42,9 +42,17 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
     'Would we pay $29/workspace/month if this worked? Why or why not?',
   )
   await expect(page.getByText('not a working editor')).toBeVisible()
-  await expect(page.getByText('roadmap work—not implemented yet')).toBeVisible()
-  await expect(page.getByText('Illustrative prototype—not a screenshot')).toBeVisible()
-  await expect(page.getByText('no contract upload or confidential material')).toBeVisible()
+  await expect(page.getByText('roadmap work. They are not implemented yet')).toBeVisible()
+  await expect(page.getByText('Illustrative prototype. This is not a screenshot')).toBeVisible()
+  await expect(page.getByText('Do not upload a contract or confidential material')).toBeVisible()
+  const renderedContent = await page
+    .locator('body, title, meta[content]')
+    .evaluateAll((elements) =>
+      elements
+        .map((element) => element.getAttribute('content') ?? element.textContent ?? '')
+        .join('\n'),
+    )
+  expect(renderedContent).not.toContain('—')
   await expect(page.getByRole('link', { name: 'Follow the public build' })).toHaveAttribute(
     'href',
     'https://github.com/bymilon/openapi-studio-tanstack',

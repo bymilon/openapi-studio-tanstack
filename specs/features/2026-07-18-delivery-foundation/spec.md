@@ -1,12 +1,12 @@
 # Delivery Foundation
 
-| Field           | Value                         |
-| --------------- | ----------------------------- |
-| Feature ID      | TSK-1                         |
-| Roadmap outcome | Phase 0 — Delivery Foundation |
-| Status          | SPEC_APPROVED                 |
-| Owner           | Product owner                 |
-| Updated         | 2026-07-18                    |
+| Field           | Value                        |
+| --------------- | ---------------------------- |
+| Feature ID      | TSK-1                        |
+| Roadmap outcome | Phase 0: Delivery Foundation |
+| Status          | SPEC_APPROVED                |
+| Owner           | Product owner                |
+| Updated         | 2026-07-18                   |
 
 ## Problem and Outcome
 

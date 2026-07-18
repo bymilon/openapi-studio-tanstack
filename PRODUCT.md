@@ -41,7 +41,7 @@ Do not resemble generic AI-generated SaaS, anonymous white/cobalt enterprise min
 1. Evidence before persuasion: every claim sits beside a truthful artifact, boundary, or verifiable delivery fact.
 2. One decision per fold: establish fit, show the workflow, resolve trust, then present the offer.
 3. Enterprise restraint, startup honesty: use disciplined hierarchy and finish without pretending to have customers, scale, or capabilities that do not exist.
-4. The contract is the visual subject: OpenAPI structure, changes, validation, and publishing provide the imagery—not generic decoration.
+4. The contract is the visual subject: OpenAPI structure, changes, validation, and publishing provide the imagery, not generic decoration.
 5. Conversion without pressure: make the five-team pilot, response expectation, and $29 post-pilot price explicit.
 
 ## Accessibility & Inclusion

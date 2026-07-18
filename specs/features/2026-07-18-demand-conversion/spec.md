@@ -1,12 +1,12 @@
 # Demand and Conversion
 
-| Field           | Value                           |
-| --------------- | ------------------------------- |
-| Feature ID      | TSK-2                           |
-| Roadmap outcome | Phase 1 — Demand and Conversion |
-| Status          | SPEC_APPROVED                   |
-| Owner           | Product owner                   |
-| Updated         | 2026-07-18                      |
+| Field           | Value                          |
+| --------------- | ------------------------------ |
+| Feature ID      | TSK-2                          |
+| Roadmap outcome | Phase 1: Demand and Conversion |
+| Status          | SPEC_APPROVED                  |
+| Owner           | Product owner                  |
+| Updated         | 2026-07-18                     |
 
 ## Problem and Outcome
 

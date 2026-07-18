@@ -11,6 +11,16 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
   await pageView
 
   await expect(page).toHaveTitle('OpenAPI Studio — Dependable OpenAPI workflows')
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    'content',
+    'https://openapi-studio-tanstack-preview.pibin.workers.dev/og/openapi-studio-og.png',
+  )
+  await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute('content', '1200')
+  await expect(page.locator('meta[property="og:image:height"]')).toHaveAttribute('content', '630')
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+    'content',
+    'summary_large_image',
+  )
   await expect(
     page.getByRole('heading', {
       level: 1,

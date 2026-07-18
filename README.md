@@ -27,6 +27,6 @@ bun run db:smoke
 Runtime database access expects `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN`. Copy `.env.example` to an ignored local environment file; never commit real credentials.
 `bun run db:integration` is reserved for an approved disposable Turso database.
 
-`bun run deploy` is intentionally human-gated. Local development and CI require no production credentials.
+`bun run deploy:preview` is intentionally human-gated and targets only the named Cloudflare preview environment. Local development and CI require no production credentials. No production deploy command exists in this phase.
 
 Pull requests and pushes to `main` run the same locked install, application checks, and local migration smoke test in GitHub Actions. Remote Turso credentials are not available to untrusted pull-request jobs.

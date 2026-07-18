@@ -1,13 +1,13 @@
 # TSK-1 — Delivery Foundation Tasks
 
-| Field        | Value                                                   |
-| ------------ | ------------------------------------------------------- |
-| Feature      | `specs/features/2026-07-18-delivery-foundation/spec.md` |
-| Branch       | `feat/TSK-1-delivery-foundation`                        |
-| Pull request | —                                                       |
-| Owner        | Main agent                                              |
-| Status       | IN_PROGRESS                                             |
-| Updated      | 2026-07-18                                              |
+| Field        | Value                                                     |
+| ------------ | --------------------------------------------------------- |
+| Feature      | `specs/features/2026-07-18-delivery-foundation/spec.md`   |
+| Branch       | `feat/TSK-1-delivery-foundation`                          |
+| Pull request | https://github.com/bymilon/openapi-studio-tanstack/pull/1 |
+| Owner        | Main agent                                                |
+| Status       | IN_PROGRESS                                               |
+| Updated      | 2026-07-18                                                |
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-1.
 
@@ -37,28 +37,28 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001, TG-002
-- **Status:** WAITING_APPROVAL
+- **Status:** DONE
 - **Outcome:** Local `check` and GitHub Actions enforce the approved build, code-quality, test, and migration gates.
 - **Requirements:** REQ-007, REQ-009
 - **Acceptance:** VAL-005, VAL-007
 - **Validation command:** `bun run check`; then observe the required GitHub pull-request run and a temporary deliberately failing validation commit.
-- **Evidence:** Local `bun ci` and `bun run check` pass. The workflow uses SHA-pinned official actions, Bun 1.3.14, Ubuntu 24.04, read-only repository permissions, concurrency cancellation, a ten-minute timeout, no secrets, and no deployment job. Independent review found no workflow security blocker. VAL-005 still requires an observed pull-request run and deliberately failing validation commit.
-- **Approval needed:** Authorize pushing this feature branch and opening a pull request. The temporary failing validation commit will exist only on the feature branch and will be reverted after GitHub records the expected failure.
+- **Evidence:** Local `bun ci` and `bun run check` pass. The workflow uses SHA-pinned official actions, Bun 1.3.14, Ubuntu 24.04, read-only repository permissions, concurrency cancellation, a ten-minute timeout, no secrets, and no deployment job. PR #1 run `29637211097` passed; deliberate failing commit `51d1be9` was rejected by run `29637241493`; revert commit `072bdb2` restored green run `29637270052`. Independent review found no workflow security blocker.
 
 ## TG-004 — Preview and Observability
 
-- **Owner:** Unassigned
+- **Owner:** Main agent
 - **Dependencies:** TG-001, TG-003
-- **Status:** BACKLOG
+- **Status:** WAITING_APPROVAL
 - **Outcome:** A human-approved preview deployment is isolated from production and emits redacted, correlated runtime logs.
 - **Requirements:** REQ-008, REQ-009
 - **Acceptance:** VAL-006, VAL-007
 - **Validation command:** Manual preview acceptance using the pinned Wrangler command and Cloudflare log inspection.
-- **Evidence:** —
+- **Evidence:** `bun run check` and `wrangler deploy --env preview --dry-run` pass. The server emits a generated `x-request-id` and bounded structured logs without paths, queries, headers, bodies, or error details; failures become generic correlated 500 responses. Tests cover successful correlation and sensitive failure containment. The sole deploy script targets named environment `openapi-studio-tanstack-preview`, with preview-scoped 100% Workers Logs sampling. Independent re-review found no remaining local blocker.
+- **Approval needed:** Authorize deployment of `openapi-studio-tanstack-preview`, live health/correlation checks, and temporary real-time log inspection. No production Worker, database, secret, or custom domain will be created or changed.
 
 ## Ready Rule
 
-TSK-1 was approved on 2026-07-18. TG-003 is waiting for the external push/pull-request approval recorded above. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
+TSK-1 was approved on 2026-07-18. TG-004 is waiting for the preview deployment approval recorded above. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
 
 ## Factory Evidence
 

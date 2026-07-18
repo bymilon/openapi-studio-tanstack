@@ -22,19 +22,19 @@ OpenAPI Studio gives small API teams one clear, reviewable path from contract ch
 
 ## Conversion & proof
 
-- Primary CTA: apply for the five-team design-partner pilot through a qualified email conversation.
+- Primary CTA: review one costly contract change through a qualified founding-pilot conversation.
 - Secondary CTA: inspect the public source and delivery evidence on GitHub.
-- The line to remember: maintain the API contract without losing control of what changed.
+- The line to remember: catch the breaking change before your users do.
 - Belief ladder: this is built for my team; it understands the real contract workflow; it is honest about what exists; its technical foundation is credible; the pilot is low-risk; $29 per workspace per month would be reasonable if it solves the repeated problem.
 - Proof on hand: a public repository, passing CI, a live Cloudflare preview, explicit OpenAPI 3.0/3.1 scope, privacy-bounded conversion telemetry, and transparent pilot terms. There are no customers, testimonials, production editor screenshots, or usage claims yet; none may be implied.
 
 ## Brand Personality
 
-Precise, composed, and accountable. The emotional goal is quiet confidence: the page should feel like a carefully engineered instrument that respects the visitor’s contract and intelligence, not a loud startup pitch or a fashionable developer template.
+Exacting, assured, and accountable. The emotional goal is controlled urgency: a carefully engineered instrument for consequential work, not a timid enterprise template or a loud startup pitch.
 
 ## Anti-references
 
-Do not resemble generic AI-generated SaaS, warm cream editorial templates, forest-green and terracotta palettes, terminal cosplay, decorative code rain, abstract gradient blobs, repeated card grids, tiny uppercase section kickers, gratuitous numbering, glassmorphism, or unearned Apple imitation. Do not use dramatic fear copy, fabricate product UI, or claim a workflow is available when it is only planned.
+Do not resemble generic AI-generated SaaS, anonymous white/cobalt enterprise minimalism, warm editorial templates, terminal cosplay, abstract gradients, repeated card grids, glassmorphism, or unearned Apple imitation. Do not fabricate product UI or claim a workflow is available when it is only planned. Urgency must name a real contract consequence, never manufacture fear.
 
 ## Design Principles
 

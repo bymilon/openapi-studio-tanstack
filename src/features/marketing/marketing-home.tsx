@@ -6,244 +6,236 @@ const applicationBody = `Hi OpenAPI Studio,
 
 Team and product:
 Current OpenAPI workflow:
-The recurring problem costing us time:
-Typical specification size:
+The recurring contract problem costing us time:
 Would we pay $29/workspace/month if this worked? Why or why not?
 
 Best,
 `.replaceAll('\n', '\r\n')
 
-const applicationHref = `mailto:pitechae@gmail.com?subject=${encodeURIComponent('OpenAPI Studio design partner')}&body=${encodeURIComponent(applicationBody)}`
-
+const applicationHref = `mailto:pitechae@gmail.com?subject=${encodeURIComponent('OpenAPI Studio founding pilot')}&body=${encodeURIComponent(applicationBody)}`
 const repositoryHref = 'https://github.com/bymilon/openapi-studio-tanstack'
+
+function Mark() {
+  return (
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M4 7h11l5 7-5 7H4l5-7-5-7Z" />
+      <path d="M36 19H25l-5 7 5 7h11l-5-7 5-7Z" />
+    </svg>
+  )
+}
 
 export function MarketingHome() {
   onMount(() => recordConversion('page_viewed'))
 
   return (
     <main>
-      <header class="site-header mx-auto flex w-full max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a class="wordmark" href="/" aria-label="OpenAPI Studio home">
-          <span class="wordmark-mark" aria-hidden="true">
-            {'{ }'}
-          </span>
-          OpenAPI Studio
-        </a>
-        <nav aria-label="Primary" class="flex items-center gap-3 sm:gap-5">
-          <a class="nav-link hidden sm:inline-flex" href="#evidence">
-            Evidence
+      <div class="brand-hero">
+        <header class="site-header shell">
+          <a class="wordmark" href="/" aria-label="OpenAPI Studio home">
+            <Mark />
+            <span>OpenAPI Studio</span>
           </a>
-          <a
-            class="button button-primary button-compact"
-            href={applicationHref}
-            onClick={() => recordConversion('design_partner_clicked')}
-          >
-            Join the pilot
-          </a>
-        </nav>
-      </header>
-
-      <section class="hero mx-auto grid w-full max-w-7xl gap-16 px-5 sm:px-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(30rem,1.12fr)] lg:items-center">
-        <div class="hero-copy">
-          <p class="status-line">
-            <span class="status-dot" aria-hidden="true" /> Five-team design-partner pilot
-          </p>
-          <h1>Know exactly what changed in your API contract.</h1>
-          <p class="hero-lead">
-            OpenAPI Studio is being shaped with small API teams that need a clearer path from a
-            contract edit to review and published documentation—without adopting a heavyweight API
-            platform.
-          </p>
-          <div class="hero-actions">
+          <nav aria-label="Primary">
+            <a class="nav-link" href="#workflow">
+              Workflow
+            </a>
+            <a class="nav-link nav-evidence" href="#evidence">
+              Evidence
+            </a>
             <a
-              class="button button-primary"
+              class="button button-dark button-compact"
               href={applicationHref}
               onClick={() => recordConversion('design_partner_clicked')}
             >
-              Apply to become a design partner
+              Join pilot
             </a>
-            <a class="text-link" href="#workflow">
-              See the proposed workflow <span aria-hidden="true">↓</span>
-            </a>
+          </nav>
+        </header>
+
+        <section class="hero shell">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span>Founding pilot</span> Five teams
+            </p>
+            <h1>Catch the breaking change before your users do.</h1>
+            <p class="hero-lead">
+              We are testing a workflow that turns an OpenAPI diff into a clear review of what
+              changed, what may break, and what the team should publish next.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-dark"
+                href={applicationHref}
+                onClick={() => recordConversion('design_partner_clicked')}
+              >
+                Email the founder about the pilot <span aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link" href="#workflow">
+                See the workflow <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+            <p class="availability">
+              Free pilot now. $29/workspace/month only if it earns its place.
+            </p>
           </div>
-          <p class="availability">
-            Free pilot · $29/workspace/month if it earns a place in your workflow
-          </p>
+
+          <figure class="contract-artifact" aria-labelledby="artifact-title">
+            <div class="artifact-top">
+              <div>
+                <p class="artifact-kicker">
+                  Illustrative founding-pilot prototype · not a live editor
+                </p>
+                <p id="artifact-title" class="artifact-title">
+                  billing-api.yaml <span>PR #184</span>
+                </p>
+              </div>
+              <span class="impact-state">Impact detected</span>
+            </div>
+            <div class="operation-row">
+              <span class="method">GET</span>
+              <code>/invoices/{'{invoiceId}'}</code>
+            </div>
+            <div class="diff" aria-label="Example OpenAPI contract change">
+              <span>42</span>
+              <code>required:</code>
+              <span class="removed">43 −</span>
+              <code class="removed">- dueDate</code>
+              <span class="added">43 +</span>
+              <code class="added">- paymentDueAt</code>
+            </div>
+            <div class="impact-callout">
+              <span class="impact-icon">!</span>
+              <div>
+                <p>Breaking change</p>
+                <strong>Required response field removed</strong>
+              </div>
+            </div>
+            <div class="review-summary">
+              <span>
+                <b>1</b> breaking change
+              </span>
+              <span>
+                <b>2</b> review notes
+              </span>
+              <strong>Needs a decision</strong>
+            </div>
+            <figcaption>
+              Illustrative prototype—not a screenshot of a currently available editor.
+            </figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <section class="pain-section">
+        <div class="shell pain-grid">
+          <p class="section-label">The problem</p>
+          <div>
+            <h2>Raw YAML tells you what moved. It rarely tells you what it costs.</h2>
+            <p>The painkiller is a reviewable decision—not another text editor.</p>
+          </div>
         </div>
-
-        <figure class="contract-artifact" aria-labelledby="artifact-title">
-          <div class="artifact-bar">
-            <div>
-              <p id="artifact-title" class="artifact-title">
-                Sample contract review
-              </p>
-              <p class="artifact-file">openapi.yaml · customers</p>
-            </div>
-            <span class="artifact-state">
-              <span class="status-dot" aria-hidden="true" /> Valid
-            </span>
-          </div>
-
-          <div class="operation-row">
-            <span class="method">PATCH</span>
-            <code>/customers/{'{customerId}'}</code>
-            <span class="operation-label">Update customer</span>
-          </div>
-
-          <div class="diff" aria-label="Example OpenAPI contract change">
-            <div class="diff-gutter" aria-hidden="true">
-              18
-            </div>
-            <code>required:</code>
-            <div class="diff-gutter diff-remove" aria-hidden="true">
-              19 −
-            </div>
-            <code class="diff-remove">- email</code>
-            <div class="diff-gutter diff-add" aria-hidden="true">
-              19 +
-            </div>
-            <code class="diff-add">- emailAddress</code>
-            <div class="diff-gutter diff-add" aria-hidden="true">
-              20 +
-            </div>
-            <code class="diff-add">minLength: 1</code>
-          </div>
-
-          <div class="review-summary">
-            <div>
-              <span class="review-value">0</span>
-              <span class="review-label">validation errors</span>
-            </div>
-            <div>
-              <span class="review-value">2</span>
-              <span class="review-label">reviewable changes</span>
-            </div>
-            <span class="review-ready">Ready for review</span>
-          </div>
-
-          <figcaption>
-            Illustrative sample of the pilot direction—not a screenshot of a currently available
-            editor.
-          </figcaption>
-        </figure>
       </section>
 
-      <section id="workflow" class="workflow-section" aria-labelledby="workflow-heading">
-        <div class="mx-auto grid w-full max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr]">
-          <div>
-            <p class="section-context">The workflow under test</p>
-            <h2 id="workflow-heading">One contract. Three decisions that stay connected.</h2>
+      <section id="workflow" class="workflow-section">
+        <div class="shell">
+          <div class="section-intro">
+            <p class="section-label">The workflow</p>
+            <h2>From changed line to team decision.</h2>
           </div>
           <ol class="workflow-list">
             <li>
-              <div class="workflow-heading">
-                <span>Edit</span>
-                <span class="workflow-state">Contract structure</span>
+              <span class="step-number">01</span>
+              <div>
+                <h3>See the removed field</h3>
+                <p>Keep dueDate beside its response path, operation, and schema context.</p>
               </div>
-              <p>Work with JSON or YAML without hiding the underlying OpenAPI 3.0/3.1 document.</p>
             </li>
             <li>
-              <div class="workflow-heading">
-                <span>Review</span>
-                <span class="workflow-state">Meaningful change</span>
+              <span class="step-number">02</span>
+              <div>
+                <h3>Assess the consequence</h3>
+                <p>Decide whether consumers can absorb the rename to paymentDueAt.</p>
               </div>
-              <p>
-                Put validation and contract consequences beside the change a teammate must approve.
-              </p>
             </li>
             <li>
-              <div class="workflow-heading">
-                <span>Publish</span>
-                <span class="workflow-state">Shared truth</span>
+              <span class="step-number">03</span>
+              <div>
+                <h3>Approve the new truth</h3>
+                <p>Publish only after the team resolves the breaking change.</p>
               </div>
-              <p>
-                Derive documentation from the same canonical contract after the team accepts it.
-              </p>
             </li>
           </ol>
         </div>
       </section>
 
-      <section id="evidence" class="evidence-section" aria-labelledby="evidence-heading">
-        <div class="mx-auto w-full max-w-7xl px-5 sm:px-8">
-          <div class="evidence-intro">
-            <p class="section-context">Evidence before claims</p>
-            <h2 id="evidence-heading">Clear about what exists—and what does not.</h2>
-            <p>
-              Enterprise trust starts with accurate boundaries. This is an early design-partner
-              program backed by public delivery work, not a finished self-serve product.
-            </p>
+      <section id="evidence" class="evidence-section">
+        <div class="shell evidence-grid">
+          <div>
+            <p class="section-label">Evidence, not theatre</p>
+            <h2>Inspect the work before you trust the promise.</h2>
           </div>
-          <div class="evidence-columns">
-            <div>
-              <h3>Available to inspect today</h3>
-              <ul class="evidence-list evidence-list-positive">
-                <li>Public source and implementation history</li>
-                <li>Passing automated delivery and accessibility checks</li>
-                <li>Explicit OpenAPI 3.0 and 3.1 product scope</li>
-                <li>Identifier-free first-party conversion events</li>
-              </ul>
-              <a
-                class="text-link evidence-link"
-                href={repositoryHref}
-                onClick={() => recordConversion('repository_clicked')}
-              >
-                View source on GitHub <span aria-hidden="true">↗</span>
-              </a>
-              <a
-                class="text-link evidence-link evidence-link-secondary"
-                href="https://github.com/bymilon/openapi-studio-tanstack/actions"
-                onClick={() => recordConversion('repository_clicked')}
-              >
-                View delivery checks <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-            <div>
-              <h3>Not being implied</h3>
-              <ul class="evidence-list">
-                <li>No production editor access yet</li>
-                <li>No fabricated customers or testimonials</li>
-                <li>No checkout, billing, or surprise charge</li>
-                <li>No promise that every team is a fit</li>
-              </ul>
-            </div>
+          <div class="evidence-copy">
+            <p>
+              OpenAPI Studio is an early founding pilot, not a finished self-serve product. The
+              public build targets OpenAPI 3.0/3.1, deploys to a Cloudflare preview, and records
+              identifier-free conversion events. No invented customers. No fake screenshots. No
+              checkout.
+            </p>
+            <a href={repositoryHref} onClick={() => recordConversion('repository_clicked')}>
+              Inspect public source <span>↗</span>
+            </a>
+            <a
+              href={`${repositoryHref}/actions`}
+              onClick={() => recordConversion('repository_clicked')}
+            >
+              Inspect delivery checks <span>↗</span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section class="offer-section" aria-labelledby="offer-heading">
-        <div class="mx-auto grid w-full max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-end">
+      <section class="offer-section">
+        <div class="shell offer-grid">
           <div>
-            <p class="section-context">Founding offer</p>
-            <h2 id="offer-heading">Five teams. A free pilot. Then $29 only if it works.</h2>
-            <p class="offer-copy">
-              Bring one real contract and one repeated workflow problem. We will confirm fit by
-              email, schedule a focused conversation, and tell you plainly what the pilot can and
-              cannot solve. This is founder-led; expect a personal reply from the builder within two
-              business days.
+            <p class="section-label">Five-team founding offer</p>
+            <h2>Bring the contract change your team keeps paying for.</h2>
+          </div>
+          <div class="price">
+            <span>$</span>
+            <strong>29</strong>
+            <p>
+              per workspace / month
+              <br />
+              after a free pilot
             </p>
           </div>
           <div class="offer-action">
+            <p class="offer-trust">
+              Built and run by{' '}
+              <a href="https://github.com/bymilon">Milon Biswas, independent founder</a>. Email only
+              the problem and workflow first—no contract upload or confidential material. Personal
+              reply within two business days.
+            </p>
             <a
-              class="button button-primary"
+              class="button button-light"
               href={applicationHref}
               onClick={() => recordConversion('design_partner_clicked')}
             >
-              Apply for a pilot place
+              Apply by email <span aria-hidden="true">↗</span>
             </a>
-            <p>
-              No checkout. No fake instant access. Do not email a contract or confidential material
-              before fit is confirmed.
-            </p>
           </div>
         </div>
       </section>
 
-      <footer class="site-footer mx-auto flex w-full max-w-7xl flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <p>OpenAPI Studio · Built in public for teams that depend on the contract.</p>
-        <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <footer class="site-footer shell">
+        <div class="footer-brand">
+          <Mark />
+          <span>OpenAPI Studio</span>
+        </div>
+        <p>Contract changes, made reviewable.</p>
+        <div>
           <a href={repositoryHref}>GitHub</a>
-          <a href="mailto:pitechae@gmail.com">pitechae@gmail.com</a>
+          <a href="mailto:pitechae@gmail.com">Email</a>
         </div>
       </footer>
     </main>

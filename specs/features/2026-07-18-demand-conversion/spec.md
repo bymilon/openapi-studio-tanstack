@@ -18,7 +18,7 @@ The page positions OpenAPI Studio as a safe workflow for editing, reviewing, and
 
 - **REQ-001:** The prerendered home page addresses small API teams maintaining OpenAPI 3.0/3.1 and leads with a specific workflow outcome rather than a feature inventory.
 - **REQ-002:** The page explains the current problem, proposed workflow, intended customer, boundaries, and evidence-backed reasons to trust the approach.
-- **REQ-003:** The offer states a design-partner price hypothesis of **$49 per workspace per month after the pilot**, with pilot terms confirmed in conversation and no checkout yet.
+- **REQ-003:** The offer states a design-partner price hypothesis of **$29 per workspace per month after the pilot**, with pilot terms confirmed in conversation and no checkout yet.
 - **REQ-004:** The primary CTA is “Apply to become a design partner”; it opens a pre-addressed email containing short qualification prompts for team, current workflow, recurring pain, specification size, and willingness to pay.
 - **REQ-005:** A secondary CTA allows prospects to inspect the public GitHub repository; neither CTA implies immediate product access.
 - **REQ-006:** Conversion measurement records only page view and named CTA-click events. It must not record email addresses, free text, OpenAPI documents, full URLs, or fingerprinting identifiers.
@@ -52,7 +52,7 @@ The page positions OpenAPI Studio as a safe workflow for editing, reviewing, and
 
 ## Validation
 
-- **VAL-001 → REQ-001, REQ-002, REQ-003:** Content review confirms one buyer, one painful workflow, one offer, transparent pilot status, and the $49 price hypothesis.
+- **VAL-001 → REQ-001, REQ-002, REQ-003:** Content review confirms one buyer, one painful workflow, one offer, transparent pilot status, and the $29 price hypothesis.
 - **VAL-002 → REQ-004, REQ-005:** Browser tests confirm both CTAs have correct destinations, qualification copy, accessible names, and no false access promise.
 - **VAL-003 → REQ-006:** Network and bundle review confirms only approved page-view and CTA events exist and no prohibited payload field is emitted.
 - **VAL-004 → REQ-007:** Automated accessibility checks, keyboard review, JavaScript-disabled review, and mobile/desktop screenshots pass.
@@ -72,7 +72,7 @@ Deploy only to the existing preview Worker first. After content and analytics ev
 
 - Positioning: safe OpenAPI editing, review, and publishing without contract corruption or documentation drift.
 - Buyer: small API teams and API-first software companies maintaining OpenAPI 3.0/3.1.
-- Offer: design-partner pilot followed by a $49/workspace/month price hypothesis.
+- Offer: design-partner pilot followed by a $29/workspace/month price hypothesis.
 - Conversion: qualified `mailto:` contact flow, not a lead database.
 - UI: add `@tailwindcss/vite`; do not add Hono or a component library.
 - Analytics: first-party bounded events in existing Cloudflare Workers Logs; no cookie, vendor SDK, or tracking token.

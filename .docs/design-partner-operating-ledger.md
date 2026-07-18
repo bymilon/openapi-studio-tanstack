@@ -16,7 +16,7 @@ A qualified prospect is part of a small software team that actively maintains an
 
 ## Aggregate Funnel
 
-| Week | Landing visitors | CTA clicks | Qualified replies | Conversations | Design partners | $49 willingness-to-pay | Dominant objection | Decision       |
+| Week | Landing visitors | CTA clicks | Qualified replies | Conversations | Design partners | $29 willingness-to-pay | Dominant objection | Decision       |
 | ---- | ---------------: | ---------: | ----------------: | ------------: | --------------: | ---------------------: | ------------------ | -------------- |
 | —    |                0 |          0 |                 0 |             0 |               0 |                      0 | —                  | Start outreach |
 
@@ -26,7 +26,7 @@ A qualified prospect is part of a small software team that actively maintains an
 - Where did the workflow slow down or fail?
 - How often does that happen, and what does it cost in time or trust?
 - What have you already tried?
-- Who owns this problem and who could approve a $49 monthly workspace tool?
+- Who owns this problem and who could approve a $29 monthly workspace tool?
 - What must work before paying would be reasonable?
 
 ## Commercial Gate

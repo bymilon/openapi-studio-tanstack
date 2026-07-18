@@ -30,7 +30,7 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
   )
   expect(applicationUrl.searchParams.get('body')).toContain('Typical specification size:')
   expect(applicationUrl.searchParams.get('body')).toContain(
-    'Would we pay $49/workspace/month if this worked? Why or why not?',
+    'Would we pay $29/workspace/month if this worked? Why or why not?',
   )
   await expect(page.getByText('No checkout. No fake instant access.')).toBeVisible()
   await expect(page.getByRole('link', { name: 'View source on GitHub' })).toHaveAttribute(
@@ -61,7 +61,7 @@ test('keeps the offer usable on a narrow screen without JavaScript', async ({ br
 
   await expect(page.getByRole('main')).toBeVisible()
   await expect(page.getByRole('link', { name: 'Apply to become a design partner' })).toBeVisible()
-  await expect(page.getByText('$49')).toBeVisible()
+  await expect(page.getByText('$29')).toBeVisible()
   expect((await page.locator('body').evaluate((body) => body.scrollWidth)) <= 360).toBe(true)
 
   await context.close()

@@ -8,7 +8,7 @@ Team and product:
 Current OpenAPI workflow:
 The recurring problem costing us time:
 Typical specification size:
-Would we pay $49/workspace/month if this worked? Why or why not?
+Would we pay $29/workspace/month if this worked? Why or why not?
 
 Best,
 `.replaceAll('\n', '\r\n')
@@ -177,7 +177,7 @@ export function MarketingHome() {
             <p class="font-mono text-xs tracking-[0.14em] uppercase">
               Price hypothesis after pilot
             </p>
-            <p class="mt-3 text-5xl font-semibold tracking-[-0.06em]">$49</p>
+            <p class="mt-3 text-5xl font-semibold tracking-[-0.06em]">$29</p>
             <p class="mt-1 text-white/95">per workspace / month</p>
             <p class="mt-4 text-sm leading-6 text-white/95">
               Pilot scope and terms are confirmed in conversation. There is no charge today.

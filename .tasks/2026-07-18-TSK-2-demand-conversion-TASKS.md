@@ -20,7 +20,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Requirements:** REQ-001, REQ-002, REQ-003, REQ-004
 - **Acceptance:** VAL-001, VAL-002
 - **Validation command:** Product content review against the approved specification.
-- **Evidence:** Product owner approved the positioning, $49/workspace/month hypothesis, `pitechae@gmail.com` contact flow, qualification prompts, Tailwind, and first-party Cloudflare event logging on 2026-07-18.
+- **Evidence:** Product owner approved the positioning, revised $29/workspace/month hypothesis, `pitechae@gmail.com` contact flow, qualification prompts, Tailwind, and first-party Cloudflare event logging on 2026-07-18.
 
 ## TG-002 — Marketing Page
 
@@ -31,7 +31,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Requirements:** REQ-001, REQ-002, REQ-003, REQ-004, REQ-005, REQ-007, REQ-008, REQ-009
 - **Acceptance:** VAL-001, VAL-002, VAL-004, VAL-005
 - **Validation command:** `bun run check` plus responsive, keyboard, and JavaScript-disabled browser review.
-- **Evidence:** The prerendered page implements the approved buyer, problem, pilot offer, $49 hypothesis, RFC-safe qualified mailto flow, and truthful pilot terms. Tailwind 4.3.3 is the only UI system. Desktop and 390px screenshots were reviewed; Chromium passes axe, keyboard order, JavaScript-disabled, CTA, metadata, and horizontal-overflow checks. GitHub confirms the linked repository is public.
+- **Evidence:** The prerendered page implements the approved buyer, problem, pilot offer, $29 hypothesis, RFC-safe qualified mailto flow, and truthful pilot terms. Tailwind 4.3.3 is the only UI system. Desktop and 390px screenshots were reviewed; Chromium passes axe, keyboard order, JavaScript-disabled, CTA, metadata, and horizontal-overflow checks. GitHub confirms the linked repository is public.
 
 ## TG-003 — Measurement and Operating Ledger
 

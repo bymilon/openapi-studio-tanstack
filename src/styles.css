@@ -60,7 +60,7 @@ h3 {
 }
 .site-header {
   display: flex;
-  min-height: 6rem;
+  min-height: 5rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -149,16 +149,16 @@ a:focus-visible {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(32rem, 1.1fr);
-  gap: clamp(3rem, 7vw, 8rem);
+  grid-template-columns: minmax(0, 0.82fr) minmax(32rem, 1.18fr);
+  gap: clamp(2.5rem, 4vw, 4.5rem);
   align-items: center;
-  padding-block: clamp(4rem, 8vw, 8rem) clamp(5rem, 10vw, 10rem);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(4rem, 7vw, 6rem);
 }
 .hero-copy {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1.15rem;
 }
 .eyebrow,
 .section-label {
@@ -178,12 +178,12 @@ a:focus-visible {
   background: #cf2f1b;
 }
 h1 {
-  max-width: 10ch;
-  font-size: clamp(3.25rem, 6.4vw, 6.8rem);
+  max-width: 11.5ch;
+  font-size: clamp(3.25rem, 5vw, 4.75rem);
   font-stretch: 92%;
   font-weight: 720;
   letter-spacing: -0.04em;
-  line-height: 0.92;
+  line-height: 0.94;
   color: #cf2f1b;
 }
 .hero-lead {
@@ -350,7 +350,7 @@ figcaption {
 }
 .pain-section h2 {
   max-width: 21ch;
-  font-size: clamp(2.5rem, 5vw, 5.6rem);
+  font-size: clamp(2.4rem, 4vw, 4.4rem);
   font-stretch: 90%;
   font-weight: 650;
   letter-spacing: -0.035em;
@@ -377,7 +377,7 @@ figcaption {
 .section-intro h2,
 .evidence-grid h2 {
   max-width: 15ch;
-  font-size: clamp(2.6rem, 5vw, 5rem);
+  font-size: clamp(2.4rem, 4vw, 4.25rem);
   font-stretch: 90%;
   font-weight: 680;
   letter-spacing: -0.04em;
@@ -469,7 +469,7 @@ figcaption {
 .offer-section h2 {
   max-width: 17ch;
   margin-top: 1.5rem;
-  font-size: clamp(2.5rem, 4.5vw, 4.7rem);
+  font-size: clamp(2.4rem, 3.7vw, 4rem);
   font-stretch: 91%;
   font-weight: 680;
   letter-spacing: -0.04em;
@@ -552,10 +552,10 @@ figcaption {
     display: none;
   }
   .hero {
-    padding-top: 3.5rem;
+    padding-top: 2.5rem;
   }
   h1 {
-    font-size: clamp(3rem, 14.5vw, 4.8rem);
+    font-size: clamp(2.8rem, 13vw, 4rem);
   }
   .hero-actions,
   .hero-actions .button {

@@ -23,7 +23,7 @@
 - **Dependencies:** TG-002
 - **Status:** IN_PROGRESS
 - **Acceptance:** REQ-008 and REQ-009 validation, independent review, preview acceptance, and CI pass.
-- **Evidence:** The third visual direction is implemented and local accessibility, truthfulness, no-JavaScript, and narrow-screen checks are being revalidated. Full-page evidence is at `.docs/TSK-3-redesign-desktop.png` and `.docs/TSK-3-redesign-mobile.png`. Independent critique, updated PR CI, and a new preview remain before product-owner approval.
+- **Evidence:** The third visual direction is implemented. After product-owner review exposed an oversized desktop fold, the type scale, hero spacing, grid balance, and downstream display sizes were tightened. Exact fold evidence at `.docs/TSK-3-fold-2048x1000.png` keeps the CTA and prototype visible without scrolling; full-page desktop and mobile evidence is also current. Accessibility, truthfulness, no-JavaScript, and narrow-screen checks pass. Updated preview approval remains.
 
 ## Ready Rule
 

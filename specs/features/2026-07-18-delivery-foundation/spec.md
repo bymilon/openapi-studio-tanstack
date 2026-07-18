@@ -4,7 +4,7 @@
 | --- | --- |
 | Feature ID | TSK-1 |
 | Roadmap outcome | Phase 0 — Delivery Foundation |
-| Status | SPEC_DRAFT |
+| Status | SPEC_APPROVED |
 | Owner | Product owner |
 | Updated | 2026-07-18 |
 
@@ -80,4 +80,4 @@ Create only a non-production preview Worker and disposable Turso database. Pin s
 
 ## Approval Gate
 
-No application scaffold, branch, dependency installation, Cloudflare deployment, or Turso provisioning begins until the product owner changes this contract to `SPEC_APPROVED`.
+The product owner approved autonomous implementation on 2026-07-18. Application scaffolding and local validation are authorized. Cloudflare deployment, Turso provisioning, production credentials, push, merge, and destructive external actions remain separately gated.

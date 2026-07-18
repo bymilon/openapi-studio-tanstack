@@ -3,23 +3,23 @@
 | Field | Value |
 | --- | --- |
 | Feature | `specs/features/2026-07-18-delivery-foundation/spec.md` |
-| Branch | Not created — specification approval required |
+| Branch | `feat/TSK-1-delivery-foundation` |
 | Pull request | — |
 | Owner | Main agent |
-| Status | BACKLOG |
+| Status | IN_PROGRESS |
 | Updated | 2026-07-18 |
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-1.
 
 ## TG-001 — Runtime Skeleton
 
-- **Owner:** Unassigned
-- **Dependencies:** Specification approval
-- **Status:** BACKLOG
+- **Owner:** Main agent
+- **Dependencies:** Complete
+- **Status:** IN_PROGRESS
 - **Outcome:** Minimal TanStack Start Solid modular monolith runs with Bun, targets Cloudflare Workers, and establishes only required vertical-slice boundaries and quality tools.
 - **Requirements:** REQ-001, REQ-002, REQ-003, REQ-004, REQ-010, REQ-011
 - **Acceptance:** VAL-001, VAL-002, VAL-003, VAL-008, VAL-009
-- **Validation command:** To be locked from generated package scripts before work starts.
+- **Validation command:** `bun run format:check && bun run lint && bun run typecheck && bun test && bun run build`; then time-bounded `bun run preview`, `GET /health`, dependency inspection, and bundle inspection.
 - **Evidence:** —
 
 ## TG-002 — Database Baseline
@@ -57,4 +57,12 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 ## Ready Rule
 
-After explicit specification approval, create `feat/TSK-1-delivery-foundation`, replace placeholder validation commands with exact pinned commands, assign TG-001 to the main implementation agent, and move only TG-001 to `READY`. Subagents may perform bounded read-only research and independent review; TG-001 has one writer.
+TSK-1 was approved on 2026-07-18. TG-001 is the only active write group. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
+
+## Factory Evidence
+
+- **Intake:** User authorized the full build-and-ship loop on 2026-07-18.
+- **Risk:** Medium for local scaffold; high for credentials, data, and deployment.
+- **Routing:** Main agent writes; independent agents research, review, and validate. Models remain unpinned and are routed by task risk.
+- **Retry limit:** Stop and re-triage after two materially similar failed approaches.
+- **Metrics:** Record accepted outcome, checks, review findings, retries, interventions, and deployment health—not lines of code or token volume.

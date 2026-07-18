@@ -23,7 +23,7 @@
 - **Dependencies:** TG-002
 - **Status:** IN_PROGRESS
 - **Acceptance:** REQ-008 and REQ-009 validation, independent review, preview acceptance, and CI pass.
-- **Evidence:** Local `bun run check` passes with 12 unit/security tests and three Playwright journeys covering axe, keyboard order, JavaScript-disabled content, CTA truthfulness, and narrow-screen overflow. The Impeccable detector returns zero findings. Full-page evidence is preserved at `.docs/TSK-3-redesign-desktop.png`, `.docs/TSK-3-redesign-mobile.png`, and `.docs/TSK-3-redesign-200-percent.png`. Independent review found no P0 design blocker and confirmed that every original P0/P1 visual defect is resolved. Preview and CI acceptance remain.
+- **Evidence:** Local `bun run check` passes with 12 unit/security tests and three Playwright journeys covering axe, keyboard order, JavaScript-disabled content, CTA truthfulness, and narrow-screen overflow. The Impeccable detector returns zero findings. Full-page evidence is preserved at `.docs/TSK-3-redesign-desktop.png`, `.docs/TSK-3-redesign-mobile.png`, and `.docs/TSK-3-redesign-200-percent.png`. Independent review found no P0 design blocker and confirmed that every original P0/P1 visual defect is resolved. PR #5 CI passes. Preview version `f8c0ee83-e96c-4f30-aea6-d87a922bac66` returns 200 with the new headline, sample disclosure, confidentiality warning, and $29 offer; the rejected headline is absent. Product-owner visual approval remains.
 
 ## Ready Rule
 

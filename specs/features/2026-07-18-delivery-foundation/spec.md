@@ -1,12 +1,12 @@
 # Delivery Foundation
 
-| Field | Value |
-| --- | --- |
-| Feature ID | TSK-1 |
+| Field           | Value                         |
+| --------------- | ----------------------------- |
+| Feature ID      | TSK-1                         |
 | Roadmap outcome | Phase 0 — Delivery Foundation |
-| Status | SPEC_APPROVED |
-| Owner | Product owner |
-| Updated | 2026-07-18 |
+| Status          | SPEC_APPROVED                 |
+| Owner           | Product owner                 |
+| Updated         | 2026-07-18                    |
 
 ## Problem and Outcome
 
@@ -26,7 +26,7 @@ This phase produces delivery confidence, not customer functionality. It is requi
 - **REQ-008:** Preview runtime failures and request correlation are observable through Cloudflare-native logs without recording credentials, tokens, document bodies, or sensitive headers.
 - **REQ-009:** Deployment, database provisioning, and secret creation remain explicit human-approved operations.
 - **REQ-010:** The repository establishes a single-package modular monolith with thin route adapters and only the feature, core, and platform boundaries required by implemented behavior.
-- **REQ-011:** Oxfmt, Oxlint, `tsc --noEmit`, and Valibot have non-overlapping responsibilities and run through Bun scripts; Prettier, ESLint, and Hono are absent.
+- **REQ-011:** Oxfmt, Oxlint, `tsc --noEmit`, and Valibot have non-overlapping responsibilities and run through Bun scripts; no direct Prettier, ESLint, or Hono application dependency, configuration, or script exists. Unavoidable transitive framework tooling is reported but not adopted as project tooling.
 
 ## Non-Goals
 
@@ -62,7 +62,7 @@ This phase produces delivery confidence, not customer functionality. It is requi
 - **VAL-006 → REQ-008:** A preview request produces a correlation identifier in Cloudflare logs and a review confirms no configured secret value is present.
 - **VAL-007 → REQ-009:** CI can build and test without production credentials; deploy jobs require an approved environment or manual action.
 - **VAL-008 → REQ-010:** A boundary review confirms no internal packages, premature layer folders, cross-feature internal imports, or business logic in route adapters.
-- **VAL-009 → REQ-011:** `bun run format:check`, `bun run lint`, and `bun run typecheck` invoke Oxfmt, Oxlint, and TypeScript respectively; dependency inspection confirms Prettier, ESLint, and Hono are absent.
+- **VAL-009 → REQ-011:** `bun run format:check`, `bun run lint`, and `bun run typecheck` invoke Oxfmt, Oxlint, and TypeScript respectively; direct dependencies, configuration, and scripts contain no Prettier, ESLint, or Hono. Transitive framework tooling is reported but not treated as an application tool choice.
 
 ## Rollout and Rollback
 

@@ -1,13 +1,13 @@
 # TSK-1 — Delivery Foundation Tasks
 
-| Field | Value |
-| --- | --- |
-| Feature | `specs/features/2026-07-18-delivery-foundation/spec.md` |
-| Branch | `feat/TSK-1-delivery-foundation` |
-| Pull request | — |
-| Owner | Main agent |
-| Status | IN_PROGRESS |
-| Updated | 2026-07-18 |
+| Field        | Value                                                   |
+| ------------ | ------------------------------------------------------- |
+| Feature      | `specs/features/2026-07-18-delivery-foundation/spec.md` |
+| Branch       | `feat/TSK-1-delivery-foundation`                        |
+| Pull request | —                                                       |
+| Owner        | Main agent                                              |
+| Status       | IN_PROGRESS                                             |
+| Updated      | 2026-07-18                                              |
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-1.
 
@@ -15,18 +15,18 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Main agent
 - **Dependencies:** Complete
-- **Status:** IN_PROGRESS
+- **Status:** DONE
 - **Outcome:** Minimal TanStack Start Solid modular monolith runs with Bun, targets Cloudflare Workers, and establishes only required vertical-slice boundaries and quality tools.
 - **Requirements:** REQ-001, REQ-002, REQ-003, REQ-004, REQ-010, REQ-011
 - **Acceptance:** VAL-001, VAL-002, VAL-003, VAL-008, VAL-009
-- **Validation command:** `bun run format:check && bun run lint && bun run typecheck && bun test && bun run build`; then time-bounded `bun run preview`, `GET /health`, dependency inspection, and bundle inspection.
-- **Evidence:** —
+- **Validation command:** `bun run check`; then time-bounded `bun run preview`, `GET /health`, dependency inspection, and bundle inspection.
+- **Evidence:** `bun install --frozen-lockfile`, `bun run check`, and `git diff --check` pass on Bun 1.3.14. The production build prerenders `/` and emits the Worker entry. Built preview smoke checks return `GET /health` 200 with `{"status":"ok"}`, `HEAD /health` 200, `POST /health` 405, and `/` 200. Independent review findings were resolved; no deployment occurred.
 
 ## TG-002 — Database Baseline
 
-- **Owner:** Unassigned
+- **Owner:** Main agent
 - **Dependencies:** TG-001
-- **Status:** BACKLOG
+- **Status:** READY
 - **Outcome:** Request-scoped Turso access and a retry-safe baseline migration work against a disposable database.
 - **Requirements:** REQ-005, REQ-006
 - **Acceptance:** VAL-004
@@ -57,7 +57,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 ## Ready Rule
 
-TSK-1 was approved on 2026-07-18. TG-001 is the only active write group. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
+TSK-1 was approved on 2026-07-18. TG-002 is the next write group. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
 
 ## Factory Evidence
 

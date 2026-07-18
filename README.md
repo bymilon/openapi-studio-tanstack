@@ -25,5 +25,6 @@ bun run db:smoke
 ```
 
 Runtime database access expects `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN`. Copy `.env.example` to an ignored local environment file; never commit real credentials.
+`bun run db:integration` is reserved for an approved disposable Turso database.
 
 `bun run deploy` is intentionally human-gated. Local development and CI require no production credentials.

@@ -12,6 +12,7 @@
     "db:generate": "drizzle-kit generate",
     "db:check": "drizzle-kit check",
     "db:smoke": "bun run scripts/database-smoke.ts",
+    "db:integration": "bun run scripts/database-integration.ts",
     "build": "vite build",
     "preview": "vite preview --host localhost --port 4173 --strictPort",
     "check": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run build",

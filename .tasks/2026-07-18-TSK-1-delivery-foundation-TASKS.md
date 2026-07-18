@@ -26,19 +26,18 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001
-- **Status:** WAITING_APPROVAL
+- **Status:** DONE
 - **Outcome:** Request-scoped Turso access and a retry-safe baseline migration work against a disposable database.
 - **Requirements:** REQ-005, REQ-006
 - **Acceptance:** VAL-004
 - **Validation command:** `bun run db:check`, `bun run db:smoke`, and `bun run check`.
-- **Evidence:** Drizzle ORM 0.45.2, Drizzle Kit 0.31.10, and `@libsql/client` 0.17.4 are pinned. `db:check` validates the generated migration graph. `db:smoke` applies the committed migration twice to an in-memory libSQL database, then completes a typed insert/query. TanStack's `server-only` guard protects the credential-bearing factory. Independent review confirmed the local gate and identified the remaining VAL-004 requirement: a human-approved disposable Turso integration run. No Turso or Cloudflare resource was provisioned.
-- **Approval needed:** Authorize creation and later deletion of one disposable Turso database and scoped token for VAL-004. Credentials must be supplied through local environment variables and must not be committed.
+- **Evidence:** Drizzle ORM 0.45.2, Drizzle Kit 0.31.10, and `@libsql/client` 0.17.4 are pinned. `db:check` validates the generated migration graph. `db:smoke` applies the committed migration twice to in-memory libSQL, then completes a typed insert/query. TanStack's `server-only` guard protects the credential-bearing factory. On 2026-07-18, `db:integration` applied the migration twice and completed the same query against disposable Turso database `oas-tsk1-val-6bfd6949` through `@libsql/client/web`; the one-day token remained in process memory and the database was destroyed immediately afterward.
 
 ## TG-003 — Automated Quality Gates
 
-- **Owner:** Unassigned
+- **Owner:** Main agent
 - **Dependencies:** TG-001, TG-002
-- **Status:** BACKLOG
+- **Status:** IN_PROGRESS
 - **Outcome:** Local `check` and GitHub Actions enforce the approved build, code-quality, test, and migration gates.
 - **Requirements:** REQ-007, REQ-009
 - **Acceptance:** VAL-005, VAL-007
@@ -58,7 +57,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 ## Ready Rule
 
-TSK-1 was approved on 2026-07-18. TG-002 is waiting for the external approval recorded above; TG-003 cannot start until TG-002 passes. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
+TSK-1 was approved on 2026-07-18. TG-003 is the active write group. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
 
 ## Factory Evidence
 

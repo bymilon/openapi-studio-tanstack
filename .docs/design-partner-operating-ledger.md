@@ -20,6 +20,14 @@ A qualified prospect is part of a small software team that actively maintains an
 | ---- | ---------------: | ---------: | ----------------: | ------------: | --------------: | ---------------------: | ------------------ | -------------- |
 | TBD  |                0 |          0 |                 0 |             0 |               0 |                      0 | None               | Start outreach |
 
+## Seven-Day Outreach Sprint
+
+| Date       | Researched | Sent | Follow-ups | Qualified replies | Calls booked | Calls held | Repeated pain confirmed |
+| ---------- | ---------: | ---: | ---------: | ----------------: | -----------: | ---------: | ----------------------: |
+| 2026-07-18 |         10 |    0 |          0 |                 0 |            0 |          0 |                       0 |
+
+Update this table with aggregate counts only. The daily target is 10 researched messages. Stop after one follow-up per prospect.
+
 ## Conversation Prompts
 
 - Walk me through the last OpenAPI change your team made.

@@ -17,7 +17,7 @@
     "preview": "vite preview --host localhost --port 4173 --strictPort",
     "check": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run db:check && bun run db:smoke && bun run build",
     "cf-typegen": "wrangler types",
-    "deploy:preview": "bun run check && wrangler deploy --env preview"
+    "deploy:preview": "bun run check && wrangler deploy"
   },
   "dependencies": {
     "@libsql/client": "0.17.4",

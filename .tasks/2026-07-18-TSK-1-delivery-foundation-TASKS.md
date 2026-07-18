@@ -6,7 +6,7 @@
 | Branch       | `feat/TSK-1-delivery-foundation`                          |
 | Pull request | https://github.com/bymilon/openapi-studio-tanstack/pull/1 |
 | Owner        | Main agent                                                |
-| Status       | IN_PROGRESS                                               |
+| Status       | DONE                                                      |
 | Updated      | 2026-07-18                                                |
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-1.
@@ -48,17 +48,16 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001, TG-003
-- **Status:** WAITING_APPROVAL
+- **Status:** DONE
 - **Outcome:** A human-approved preview deployment is isolated from production and emits redacted, correlated runtime logs.
 - **Requirements:** REQ-008, REQ-009
 - **Acceptance:** VAL-006, VAL-007
 - **Validation command:** Manual preview acceptance using the pinned Wrangler command and Cloudflare log inspection.
-- **Evidence:** `bun run check` and `wrangler deploy --env preview --dry-run` pass. The server emits a generated `x-request-id` and bounded structured logs without paths, queries, headers, bodies, or error details; failures become generic correlated 500 responses. Tests cover successful correlation and sensitive failure containment. The sole deploy script targets named environment `openapi-studio-tanstack-preview`, with preview-scoped 100% Workers Logs sampling. Independent re-review found no remaining local blocker.
-- **Approval needed:** Authorize deployment of `openapi-studio-tanstack-preview`, live health/correlation checks, and temporary real-time log inspection. No production Worker, database, secret, or custom domain will be created or changed.
+- **Evidence:** `bun run check` and the preview deploy dry run pass. The server emits a generated `x-request-id` and bounded structured logs without paths, queries, headers, bodies, or error details; failures become generic correlated 500 responses. Tests cover successful correlation and sensitive failure containment. The only configured Worker and deploy script target `openapi-studio-tanstack-preview`, with 100% Workers Logs sampling. Independent re-review found no remaining local blocker. A first live attempt proved redirected Vite configuration did not honor an environment-specific name; the newly created generic Worker was deleted, and isolation was simplified to a preview-only top-level configuration. Preview version `67c600d7-78d7-4b95-9fac-b3ff443b7644` is live at `https://openapi-studio-tanstack-preview.pibin.workers.dev`. `/` and `/health` returned 200; response request ID `20c93123-d540-44dd-9802-22f5455fdfd7` appeared in real-time logs, while a temporary secret-marker header value did not.
 
 ## Ready Rule
 
-TSK-1 was approved on 2026-07-18. TG-004 is waiting for the preview deployment approval recorded above. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
+TSK-1 completed its approved implementation and preview-validation scope on 2026-07-18. Merge and any production operation remain separately human-gated. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
 
 ## Factory Evidence
 

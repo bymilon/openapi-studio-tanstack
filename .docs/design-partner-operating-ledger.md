@@ -24,7 +24,7 @@ A qualified prospect is part of a small software team that actively maintains an
 
 | Date       | Researched | Sent | Follow-ups | Qualified replies | Calls booked | Calls held | Repeated pain confirmed |
 | ---------- | ---------: | ---: | ---------: | ----------------: | -----------: | ---------: | ----------------------: |
-| 2026-07-18 |          0 |    0 |          0 |                 0 |            0 |          0 |                       0 |
+| 2026-07-18 |         10 |    0 |          0 |                 0 |            0 |          0 |                       0 |
 
 Update this table with aggregate counts only. The daily target is 10 researched messages. Stop after one follow-up per prospect.
 

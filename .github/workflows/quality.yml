@@ -28,5 +28,8 @@ jobs:
       - name: Install locked dependencies
         run: bun ci
 
+      - name: Install Chromium
+        run: bunx playwright install --with-deps chromium
+
       - name: Validate application
         run: bun run check

@@ -6,199 +6,237 @@ const applicationBody = `Hi OpenAPI Studio,
 
 Team and product:
 Current OpenAPI workflow:
-The recurring problem costing us time:
-Typical specification size:
+The recurring contract problem costing us time:
 Would we pay $29/workspace/month if this worked? Why or why not?
 
 Best,
 `.replaceAll('\n', '\r\n')
 
-const applicationHref = `mailto:pitechae@gmail.com?subject=${encodeURIComponent('OpenAPI Studio design partner')}&body=${encodeURIComponent(applicationBody)}`
+const applicationHref = `mailto:pitechae@gmail.com?subject=${encodeURIComponent('OpenAPI Studio founding pilot')}&body=${encodeURIComponent(applicationBody)}`
+const repositoryHref = 'https://github.com/bymilon/openapi-studio-tanstack'
+
+function Mark() {
+  return (
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M4 7h11l5 7-5 7H4l5-7-5-7Z" />
+      <path d="M36 19H25l-5 7 5 7h11l-5-7 5-7Z" />
+    </svg>
+  )
+}
 
 export function MarketingHome() {
   onMount(() => recordConversion('page_viewed'))
 
   return (
     <main>
-      <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-6 sm:px-8">
-        <a
-          class="font-mono text-sm font-bold tracking-[-0.04em]"
-          href="/"
-          aria-label="OpenAPI Studio home"
-        >
-          OPENAPI/STUDIO
-        </a>
-        <span class="rounded-full border border-ink/20 px-3 py-1 font-mono text-[0.68rem] tracking-[0.12em] uppercase">
-          Design-partner pilot
-        </span>
-      </header>
-
-      <section class="mx-auto grid min-h-[calc(100vh-5.5rem)] w-full max-w-6xl content-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_19rem] lg:items-end lg:py-24">
-        <div>
-          <p class="mb-6 font-mono text-xs font-bold tracking-[0.16em] text-moss uppercase">
-            For small teams maintaining OpenAPI 3.0 and 3.1
-          </p>
-          <h1 class="max-w-[12ch] text-[clamp(3.4rem,9vw,7.8rem)] leading-[0.86] font-semibold tracking-[-0.075em] text-balance">
-            Your API contract should not feel like a live grenade.
-          </h1>
-        </div>
-        <div class="border-t border-ink/25 pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-7">
-          <p class="text-lg leading-8 text-ink/75">
-            Edit, review, and publish OpenAPI contracts without YAML mistakes, silent breakage, or
-            documentation drift.
-          </p>
-          <div class="mt-8 flex flex-col gap-3">
+      <div class="brand-hero">
+        <header class="site-header shell">
+          <a class="wordmark" href="/" aria-label="OpenAPI Studio home">
+            <Mark />
+            <span>OpenAPI Studio</span>
+          </a>
+          <nav aria-label="Primary">
+            <a class="nav-link" href="#workflow">
+              Workflow
+            </a>
+            <a class="nav-link nav-evidence" href="#evidence">
+              Evidence
+            </a>
             <a
-              class="group flex items-center justify-between rounded-sm bg-accent px-5 py-4 font-bold text-white outline-offset-4 hover:bg-[#963522] focus-visible:outline-2 focus-visible:outline-moss"
+              class="button button-dark button-compact"
               href={applicationHref}
               onClick={() => recordConversion('design_partner_clicked')}
             >
-              Apply to become a design partner
-              <span class="cta-arrow" aria-hidden="true">
-                →
-              </span>
+              Join pilot
             </a>
-            <a
-              class="group flex items-center justify-between rounded-sm border border-ink/30 px-5 py-4 font-bold outline-offset-4 hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-moss"
-              href="https://github.com/bymilon/openapi-studio-tanstack"
-              onClick={() => recordConversion('repository_clicked')}
-            >
-              View source on GitHub
-              <span class="cta-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
+          </nav>
+        </header>
+
+        <section class="hero shell">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span>Founding pilot</span> Five teams
+            </p>
+            <h1>Catch the breaking change before your users do.</h1>
+            <p class="hero-lead">
+              We are testing a workflow that turns an OpenAPI diff into a clear review of what
+              changed, what may break, and what the team should publish next.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-dark"
+                href={applicationHref}
+                onClick={() => recordConversion('design_partner_clicked')}
+              >
+                Email the founder about the pilot <span aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link" href="#workflow">
+                See the workflow <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+            <p class="availability">
+              Free pilot now. $29/workspace/month only if it earns its place.
+            </p>
           </div>
-          <p class="mt-4 text-sm leading-6 text-ink/75">
-            No checkout. No fake instant access. We start with a direct conversation.
-          </p>
+
+          <figure class="contract-artifact" aria-labelledby="artifact-title">
+            <div class="artifact-top">
+              <div>
+                <p class="artifact-kicker">
+                  Illustrative founding-pilot prototype · not a live editor
+                </p>
+                <p id="artifact-title" class="artifact-title">
+                  billing-api.yaml <span>PR #184</span>
+                </p>
+              </div>
+              <span class="impact-state">Impact detected</span>
+            </div>
+            <div class="operation-row">
+              <span class="method">GET</span>
+              <code>/invoices/{'{invoiceId}'}</code>
+            </div>
+            <div class="diff" aria-label="Example OpenAPI contract change">
+              <span>42</span>
+              <code>required:</code>
+              <span class="removed">43 −</span>
+              <code class="removed">- dueDate</code>
+              <span class="added">43 +</span>
+              <code class="added">- paymentDueAt</code>
+            </div>
+            <div class="impact-callout">
+              <span class="impact-icon">!</span>
+              <div>
+                <p>Breaking change</p>
+                <strong>Required response field removed</strong>
+              </div>
+            </div>
+            <div class="review-summary">
+              <span>
+                <b>1</b> breaking change
+              </span>
+              <span>
+                <b>2</b> review notes
+              </span>
+              <strong>Needs a decision</strong>
+            </div>
+            <figcaption>
+              Illustrative prototype—not a screenshot of a currently available editor.
+            </figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <section class="pain-section">
+        <div class="shell pain-grid">
+          <p class="section-label">The problem</p>
+          <div>
+            <h2>Raw YAML tells you what moved. It rarely tells you what it costs.</h2>
+            <p>The painkiller is a reviewable decision—not another text editor.</p>
+          </div>
         </div>
       </section>
 
-      <section class="border-y border-ink/20 bg-white/30" aria-labelledby="problem-heading">
-        <div class="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
-          <div class="grid gap-8 lg:grid-cols-2">
-            <h2
-              id="problem-heading"
-              class="max-w-[12ch] text-4xl leading-tight font-semibold tracking-[-0.045em] sm:text-6xl"
-            >
-              The contract is critical. The workflow around it is brittle.
-            </h2>
-            <p class="max-w-xl text-lg leading-8 text-ink/70 lg:pt-2">
-              OpenAPI is supposed to align engineering, product, customers, and tooling. In
-              practice, teams review raw diffs, repair indentation, and discover stale documentation
-              after the API has already moved.
-            </p>
+      <section id="workflow" class="workflow-section">
+        <div class="shell">
+          <div class="section-intro">
+            <p class="section-label">The workflow</p>
+            <h2>From changed line to team decision.</h2>
           </div>
-          <ol class="mt-16 grid border-t border-ink/20 sm:grid-cols-3">
-            {[
-              [
-                '01',
-                'Editing is fragile',
-                'One malformed change can invalidate the document or quietly alter its meaning.',
-              ],
-              [
-                '02',
-                'Reviews lack context',
-                'Text diffs hide the endpoint, schema, and compatibility consequences reviewers actually need.',
-              ],
-              [
-                '03',
-                'Published docs drift',
-                'When editing and publishing are separate chores, consumers stop trusting the contract.',
-              ],
-            ].map(([number, title, description]) => (
-              <li class="border-b border-ink/20 py-8 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0">
-                <span class="font-mono text-xs text-accent">{number}</span>
-                <h3 class="mt-8 text-xl font-bold tracking-[-0.025em]">{title}</h3>
-                <p class="mt-3 leading-7 text-ink/65">{description}</p>
-              </li>
-            ))}
+          <ol class="workflow-list">
+            <li>
+              <span class="step-number">01</span>
+              <div>
+                <h3>See the removed field</h3>
+                <p>Keep dueDate beside its response path, operation, and schema context.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <div>
+                <h3>Assess the consequence</h3>
+                <p>Decide whether consumers can absorb the rename to paymentDueAt.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <div>
+                <h3>Approve the new truth</h3>
+                <p>Publish only after the team resolves the breaking change.</p>
+              </div>
+            </li>
           </ol>
         </div>
       </section>
 
-      <section
-        class="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:py-28"
-        aria-labelledby="workflow-heading"
-      >
-        <p class="font-mono text-xs font-bold tracking-[0.16em] text-moss uppercase">
-          What we are building with design partners
-        </p>
-        <h2
-          id="workflow-heading"
-          class="mt-5 max-w-3xl text-4xl leading-tight font-semibold tracking-[-0.045em] sm:text-6xl"
-        >
-          One dependable path from contract change to published truth.
-        </h2>
-        <div class="mt-14 grid gap-4 md:grid-cols-3">
-          {[
-            [
-              'Import',
-              'Bring a real JSON or YAML contract in without flattening its OpenAPI semantics.',
-            ],
-            [
-              'Review',
-              'Understand validation issues and meaningful changes before they reach consumers.',
-            ],
-            [
-              'Publish',
-              'Generate documentation from the same canonical contract the team approved.',
-            ],
-          ].map(([title, description], index) => (
-            <article class="min-h-64 rounded-sm bg-moss p-7 text-paper">
-              <span class="font-mono text-xs text-paper/75">0{index + 1}</span>
-              <h3 class="mt-16 text-3xl font-semibold tracking-[-0.04em]">{title}</h3>
-              <p class="mt-4 leading-7 text-paper/85">{description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="bg-accent text-white" aria-labelledby="offer-heading">
-        <div class="mx-auto grid w-full max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1fr_22rem] lg:items-end lg:py-28">
+      <section id="evidence" class="evidence-section">
+        <div class="shell evidence-grid">
           <div>
-            <p class="font-mono text-xs font-bold tracking-[0.16em] uppercase">
-              The design-partner offer
-            </p>
-            <h2
-              id="offer-heading"
-              class="mt-5 max-w-[13ch] text-4xl leading-tight font-semibold tracking-[-0.05em] sm:text-6xl"
-            >
-              Help shape the workflow before we scale the feature list.
-            </h2>
-            <p class="mt-7 max-w-2xl text-lg leading-8 text-white/95">
-              Bring a real contract and the recurring problem around it. We will work directly with
-              a small group of teams, prioritize repeated pain, and be explicit about what is not
-              built yet.
-            </p>
+            <p class="section-label">Evidence, not theatre</p>
+            <h2>Inspect the work before you trust the promise.</h2>
           </div>
-          <div class="border-t border-white/35 pt-7">
-            <p class="font-mono text-xs tracking-[0.14em] uppercase">
-              Price hypothesis after pilot
+          <div class="evidence-copy">
+            <p>
+              OpenAPI Studio is an early founding pilot, not a finished self-serve product. The
+              public build targets OpenAPI 3.0/3.1, deploys to a Cloudflare preview, and records
+              identifier-free conversion events. No invented customers. No fake screenshots. No
+              checkout.
             </p>
-            <p class="mt-3 text-5xl font-semibold tracking-[-0.06em]">$29</p>
-            <p class="mt-1 text-white/95">per workspace / month</p>
-            <p class="mt-4 text-sm leading-6 text-white/95">
-              Pilot scope and terms are confirmed in conversation. There is no charge today.
-            </p>
+            <a href={repositoryHref} onClick={() => recordConversion('repository_clicked')}>
+              Inspect public source <span>↗</span>
+            </a>
             <a
-              class="mt-8 flex items-center justify-between rounded-sm bg-ink px-5 py-4 font-bold text-paper outline-offset-4 hover:bg-moss focus-visible:outline-2 focus-visible:outline-white"
-              href={applicationHref}
-              onClick={() => recordConversion('design_partner_clicked')}
+              href={`${repositoryHref}/actions`}
+              onClick={() => recordConversion('repository_clicked')}
             >
-              Start the conversation
-              <span aria-hidden="true">→</span>
+              Inspect delivery checks <span>↗</span>
             </a>
           </div>
         </div>
       </section>
 
-      <footer class="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-ink/65 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <p>OpenAPI Studio · Built in public for teams who depend on the contract.</p>
-        <a class="underline hover:text-ink" href="mailto:pitechae@gmail.com">
-          pitechae@gmail.com
-        </a>
+      <section class="offer-section">
+        <div class="shell offer-grid">
+          <div>
+            <p class="section-label">Five-team founding offer</p>
+            <h2>Bring the contract change your team keeps paying for.</h2>
+          </div>
+          <div class="price">
+            <span>$</span>
+            <strong>29</strong>
+            <p>
+              per workspace / month
+              <br />
+              after a free pilot
+            </p>
+          </div>
+          <div class="offer-action">
+            <p class="offer-trust">
+              Built and run by{' '}
+              <a href="https://github.com/bymilon">Milon Biswas, independent founder</a>. Email only
+              the problem and workflow first—no contract upload or confidential material. Personal
+              reply within two business days.
+            </p>
+            <a
+              class="button button-light"
+              href={applicationHref}
+              onClick={() => recordConversion('design_partner_clicked')}
+            >
+              Apply by email <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer shell">
+        <div class="footer-brand">
+          <Mark />
+          <span>OpenAPI Studio</span>
+        </div>
+        <p>Contract changes, made reviewable.</p>
+        <div>
+          <a href={repositoryHref}>GitHub</a>
+          <a href="mailto:pitechae@gmail.com">Email</a>
+        </div>
       </footer>
     </main>
   )

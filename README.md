@@ -6,9 +6,9 @@ Review consequential OpenAPI contract changes before they reach users.
 
 [![Quality](https://github.com/bymilon/openapi-studio-tanstack/actions/workflows/quality.yml/badge.svg)](https://github.com/bymilon/openapi-studio-tanstack/actions/workflows/quality.yml)
 
-![OpenAPI Studio demand-validation website](.docs/TSK-4-public-trust-desktop.png)
+![OpenAPI Studio — Contract changes, made reviewable](public/og/openapi-studio-og.png)
 
-_Website preview—not product UI._
+_Brand preview with an illustrative product concept—not product UI._
 
 [View the live preview](https://openapi-studio-tanstack-preview.pibin.workers.dev) · [Join design-partner research](mailto:pitechae@gmail.com?subject=OpenAPI%20Studio%20design-partner%20research) · [Read the product roadmap](specs/roadmap.md)
 

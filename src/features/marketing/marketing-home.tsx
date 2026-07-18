@@ -12,7 +12,7 @@ Would we pay $29/workspace/month if this worked? Why or why not?
 Best,
 `.replaceAll('\n', '\r\n')
 
-const applicationHref = `mailto:pitechae@gmail.com?subject=${encodeURIComponent('OpenAPI Studio founding pilot')}&body=${encodeURIComponent(applicationBody)}`
+const applicationHref = `mailto:pitechae@gmail.com?subject=${encodeURIComponent('OpenAPI Studio design-partner research')}&body=${encodeURIComponent(applicationBody)}`
 const repositoryHref = 'https://github.com/bymilon/openapi-studio-tanstack'
 
 function Mark() {
@@ -47,7 +47,7 @@ export function MarketingHome() {
               href={applicationHref}
               onClick={() => recordConversion('design_partner_clicked')}
             >
-              Join pilot
+              Join research
             </a>
           </nav>
         </header>
@@ -55,12 +55,12 @@ export function MarketingHome() {
         <section class="hero shell">
           <div class="hero-copy">
             <p class="eyebrow">
-              <span>Founding pilot</span> Five teams
+              <span>Design-partner research</span> Five teams
             </p>
             <h1>Catch the breaking change before your users do.</h1>
             <p class="hero-lead">
-              We are testing a workflow that turns an OpenAPI diff into a clear review of what
-              changed, what may break, and what the team should publish next.
+              We are testing whether small API teams need a clearer way to review OpenAPI contract
+              changes before we build the product workflow.
             </p>
             <div class="hero-actions">
               <a
@@ -68,23 +68,22 @@ export function MarketingHome() {
                 href={applicationHref}
                 onClick={() => recordConversion('design_partner_clicked')}
               >
-                Email the founder about the pilot <span aria-hidden="true">↗</span>
+                Email the founder about the research <span aria-hidden="true">↗</span>
               </a>
               <a class="text-link" href="#workflow">
                 See the workflow <span aria-hidden="true">↓</span>
               </a>
             </div>
             <p class="availability">
-              Free pilot now. $29/workspace/month only if it earns its place.
+              Interviews are free. A product pilot and $29/workspace/month price are hypotheses—not
+              available yet.
             </p>
           </div>
 
           <figure class="contract-artifact" aria-labelledby="artifact-title">
             <div class="artifact-top">
               <div>
-                <p class="artifact-kicker">
-                  Illustrative founding-pilot prototype · not a live editor
-                </p>
+                <p class="artifact-kicker">Illustrative product concept · not a live editor</p>
                 <p id="artifact-title" class="artifact-title">
                   billing-api.yaml <span>PR #184</span>
                 </p>
@@ -139,8 +138,8 @@ export function MarketingHome() {
       <section id="workflow" class="workflow-section">
         <div class="shell">
           <div class="section-intro">
-            <p class="section-label">The workflow</p>
-            <h2>From changed line to team decision.</h2>
+            <p class="section-label">Proposed workflow</p>
+            <h2>The workflow we want to validate.</h2>
           </div>
           <ol class="workflow-list">
             <li>
@@ -171,18 +170,19 @@ export function MarketingHome() {
       <section id="evidence" class="evidence-section">
         <div class="shell evidence-grid">
           <div>
-            <p class="section-label">Evidence, not theatre</p>
-            <h2>Inspect the work before you trust the promise.</h2>
+            <p class="section-label">Current build status</p>
+            <h2>See what exists today—and what comes next.</h2>
           </div>
           <div class="evidence-copy">
             <p>
-              OpenAPI Studio is an early founding pilot, not a finished self-serve product. The
-              public build targets OpenAPI 3.0/3.1, deploys to a Cloudflare preview, and records
-              identifier-free conversion events. No invented customers. No fake screenshots. No
-              checkout.
+              OpenAPI Studio is in demand validation, not a working editor. Today’s repository
+              contains this website, delivery checks, preview infrastructure, and identifier-free
+              conversion measurement. OpenAPI 3.0/3.1 import, validation, diff review, and
+              publishing are roadmap work—not implemented yet. No invented customers. No fake
+              screenshots. No checkout.
             </p>
             <a href={repositoryHref} onClick={() => recordConversion('repository_clicked')}>
-              Inspect public source <span>↗</span>
+              Follow the public build <span>↗</span>
             </a>
             <a
               href={`${repositoryHref}/actions`}
@@ -197,16 +197,16 @@ export function MarketingHome() {
       <section class="offer-section">
         <div class="shell offer-grid">
           <div>
-            <p class="section-label">Five-team founding offer</p>
+            <p class="section-label">Five-team research cohort</p>
             <h2>Bring the contract change your team keeps paying for.</h2>
           </div>
           <div class="price">
             <span>$</span>
             <strong>29</strong>
             <p>
-              per workspace / month
+              price hypothesis
               <br />
-              after a free pilot
+              product not available yet
             </p>
           </div>
           <div class="offer-action">

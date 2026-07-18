@@ -18,11 +18,11 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
     }),
   ).toBeVisible()
 
-  const application = page.getByRole('link', { name: 'Email the founder about the pilot' })
+  const application = page.getByRole('link', { name: 'Email the founder about the research' })
   const applicationUrl = new URL((await application.getAttribute('href')) ?? '')
   expect(applicationUrl.protocol).toBe('mailto:')
   expect(applicationUrl.pathname).toBe('pitechae@gmail.com')
-  expect(applicationUrl.searchParams.get('subject')).toBe('OpenAPI Studio founding pilot')
+  expect(applicationUrl.searchParams.get('subject')).toBe('OpenAPI Studio design-partner research')
   expect(applicationUrl.searchParams.get('body')).toContain('Team and product:')
   expect(applicationUrl.searchParams.get('body')).toContain('Current OpenAPI workflow:')
   expect(applicationUrl.searchParams.get('body')).toContain(
@@ -31,12 +31,11 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
   expect(applicationUrl.searchParams.get('body')).toContain(
     'Would we pay $29/workspace/month if this worked? Why or why not?',
   )
-  await expect(
-    page.getByText('No invented customers. No fake screenshots. No checkout.'),
-  ).toBeVisible()
+  await expect(page.getByText('not a working editor')).toBeVisible()
+  await expect(page.getByText('roadmap work—not implemented yet')).toBeVisible()
   await expect(page.getByText('Illustrative prototype—not a screenshot')).toBeVisible()
   await expect(page.getByText('no contract upload or confidential material')).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Inspect public source' })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: 'Follow the public build' })).toHaveAttribute(
     'href',
     'https://github.com/bymilon/openapi-studio-tanstack',
   )
@@ -54,7 +53,7 @@ test('has no detectable accessibility violations and a usable tab order', async 
   await page.keyboard.press('Tab')
   await expect(page.getByRole('link', { name: 'Evidence' })).toBeFocused()
   await page.keyboard.press('Tab')
-  await expect(page.getByRole('link', { name: 'Join pilot' })).toBeFocused()
+  await expect(page.getByRole('link', { name: 'Join research' })).toBeFocused()
 })
 
 test('keeps the offer usable on a narrow screen without JavaScript', async ({ browser }) => {
@@ -67,8 +66,10 @@ test('keeps the offer usable on a narrow screen without JavaScript', async ({ br
   await page.goto('/')
 
   await expect(page.getByRole('main')).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Email the founder about the pilot' })).toBeVisible()
-  await expect(page.getByText('per workspace / month')).toBeVisible()
+  await expect(
+    page.getByRole('link', { name: 'Email the founder about the research' }),
+  ).toBeVisible()
+  await expect(page.getByText('price hypothesis')).toBeVisible()
   expect((await page.locator('body').evaluate((body) => body.scrollWidth)) <= 360).toBe(true)
 
   await context.close()

@@ -53,7 +53,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 - **Requirements:** All
 - **Acceptance:** VAL-007 and all prior validation evidence
 - **Validation command:** `bun run check`, browser acceptance, and approved preview smoke test.
-- **Evidence:** Local and GitHub `bun run check` pass with 12 unit tests and three Playwright journeys. Preview version `ba39e0e4-32e3-4f39-8dca-d57104e2044e` serves the approved headline and public-source CTA with status 200. A valid design-partner event returned 204 and matched Workers Logs under request ID `f0d06d9e-cc01-4755-96b0-28b3f7b44ce1`; an extra-field marker payload returned 400 and the marker was absent from captured logs.
+- **Evidence:** Local and GitHub `bun run check` pass with 12 unit tests and three Playwright journeys. Preview version `543c1a07-c472-4a8f-9660-c17c681eecb5` returns status 200, displays the approved $29 price, includes $29 in the qualified mailto prompt, and contains no stale $49 copy. On prior security-acceptance version `ba39e0e4-32e3-4f39-8dca-d57104e2044e`, a valid design-partner event returned 204 and matched Workers Logs under request ID `f0d06d9e-cc01-4755-96b0-28b3f7b44ce1`; an extra-field marker payload returned 400 and the marker was absent from captured logs. The price-only revision did not change the event endpoint.
 
 ## Product Decision Resolved
 

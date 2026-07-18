@@ -46,6 +46,7 @@ Stay structurally flat: square controls, hard rules, no ornamental radius, gradi
 ### Composition Gates
 
 - Desktop H1 ceiling: `4.75rem`; mobile H1 ceiling: `4rem`; later display headings: `4.4rem` maximum.
+- The desktop hero uses a literal `7:5` copy-to-artifact grid and collapses to one column at `64rem`.
 - The 1440×900 and 2048×1000 folds must include the primary CTA, price condition, and complete review artifact without scrolling.
 - Header plus hero may not exceed the initial viewport height at supported desktop sizes.
 - Consequential copy—prototype status, pricing terms, privacy guidance, and artifact captions—never renders below `0.75rem`.

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/')({
       {
         name: 'description',
         content:
-          'Edit, review, and publish OpenAPI contracts without YAML mistakes or documentation drift.',
+          'A design-partner pilot for small teams building a dependable OpenAPI contract workflow.',
       },
     ],
   }),

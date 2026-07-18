@@ -12,15 +12,15 @@ A 9.8 rating means the architecture is coherent, reproducible, secure at its bou
 
 ## Current Rating
 
-| Area | Current | Target |
-| --- | ---: | ---: |
-| Runtime architecture | 9.0 | 9.8 |
-| Validation boundaries | 8.0 | 9.8 |
-| Developer and agent experience | 9.0 | 9.8 |
-| Simplicity | 8.0 | 9.8 |
-| Repository consistency | 5.0 | 10.0 |
-| Demonstrated production readiness | 3.0 | 9.5 |
-| Overall | **8.0** | **9.8** |
+| Area                              | Current |  Target |
+| --------------------------------- | ------: | ------: |
+| Runtime architecture              |     9.0 |     9.8 |
+| Validation boundaries             |     8.0 |     9.8 |
+| Developer and agent experience    |     9.0 |     9.8 |
+| Simplicity                        |     8.0 |     9.8 |
+| Repository consistency            |     5.0 |    10.0 |
+| Demonstrated production readiness |     3.0 |     9.5 |
+| Overall                           | **8.0** | **9.8** |
 
 ## Blockers Before Application Work
 

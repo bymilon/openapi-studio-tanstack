@@ -39,7 +39,7 @@ Use one single-package modular monolith. Organize product behavior as flat verti
 - One writer owns a feature worktree. The main agent owns routes, composition, schema migrations, global configuration, the lockfile, and shared core contracts.
 - Do not add Hono while TanStack Start adequately owns routing and server functions.
 
-Once scripts exist, the merge gate is `bun run format:check`, `bun run lint`, `bun run typecheck`, `bun test`, and `bun run build`. Also run feature-specific commands declared in the task ledger.
+Once scripts exist, the merge gate is `bun run format:check`, `bun run lint`, `bun run typecheck`, `bun run test`, and `bun run build`. Also run feature-specific commands declared in the task ledger.
 
 ## Git and Review
 

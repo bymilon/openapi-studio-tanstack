@@ -1,0 +1,45 @@
+{
+  "name": "openapi-studio-tanstack",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --port 3000",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint -D correctness -D suspicious --import-plugin --vitest-plugin --jsx-a11y-plugin --deny-warnings --ignore-pattern src/routeTree.gen.ts src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "db:check": "drizzle-kit check",
+    "db:smoke": "bun run scripts/database-smoke.ts",
+    "db:integration": "bun run scripts/database-integration.ts",
+    "build": "vite build",
+    "preview": "vite preview --host localhost --port 4173 --strictPort",
+    "check": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run db:check && bun run db:smoke && bun run build",
+    "cf-typegen": "wrangler types",
+    "deploy:preview": "bun run check && wrangler deploy"
+  },
+  "dependencies": {
+    "@libsql/client": "0.17.4",
+    "@tanstack/solid-router": "1.170.18",
+    "@tanstack/solid-start": "1.168.30",
+    "drizzle-orm": "0.45.2",
+    "solid-js": "1.9.14",
+    "valibot": "1.4.2"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.45.1",
+    "drizzle-kit": "0.31.10",
+    "oxfmt": "0.59.0",
+    "oxlint": "1.74.0",
+    "typescript": "6.0.3",
+    "vite": "8.1.5",
+    "vite-plugin-solid": "2.11.12",
+    "vitest": "4.1.10",
+    "wrangler": "4.112.0"
+  },
+  "engines": {
+    "bun": ">=1.3.14 <2"
+  },
+  "packageManager": "bun@1.3.14"
+}

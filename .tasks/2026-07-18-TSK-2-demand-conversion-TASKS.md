@@ -1,13 +1,13 @@
 # TSK-2 — Demand and Conversion Tasks
 
-| Field        | Value                                                 |
-| ------------ | ----------------------------------------------------- |
-| Feature      | `specs/features/2026-07-18-demand-conversion/spec.md` |
-| Branch       | `feat/TSK-2-demand-conversion`                        |
-| Pull request | —                                                     |
-| Owner        | Main agent                                            |
-| Status       | IN_PROGRESS                                           |
-| Updated      | 2026-07-18                                            |
+| Field        | Value                                                     |
+| ------------ | --------------------------------------------------------- |
+| Feature      | `specs/features/2026-07-18-demand-conversion/spec.md`     |
+| Branch       | `feat/TSK-2-demand-conversion`                            |
+| Pull request | https://github.com/bymilon/openapi-studio-tanstack/pull/2 |
+| Owner        | Main agent                                                |
+| Status       | DONE                                                      |
+| Updated      | 2026-07-18                                                |
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-2.
 
@@ -48,12 +48,12 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Main agent
 - **Dependencies:** TG-002, TG-003
-- **Status:** IN_PROGRESS
+- **Status:** DONE
 - **Outcome:** The complete conversion slice passes quality, accessibility, truthfulness, privacy, and preview checks.
 - **Requirements:** All
 - **Acceptance:** VAL-007 and all prior validation evidence
 - **Validation command:** `bun run check`, browser acceptance, and approved preview smoke test.
-- **Evidence:** Local `bun run check` passes with 12 unit tests and three Playwright journeys. Preview deployment and live event inspection remain separately gated.
+- **Evidence:** Local and GitHub `bun run check` pass with 12 unit tests and three Playwright journeys. Preview version `ba39e0e4-32e3-4f39-8dca-d57104e2044e` serves the approved headline and public-source CTA with status 200. A valid design-partner event returned 204 and matched Workers Logs under request ID `f0d06d9e-cc01-4755-96b0-28b3f7b44ce1`; an extra-field marker payload returned 400 and the marker was absent from captured logs.
 
 ## Product Decision Resolved
 
@@ -61,4 +61,4 @@ The product owner authorized public visibility on 2026-07-18. GitHub reports `by
 
 ## Ready Rule
 
-The specification was approved on 2026-07-18. TG-001 through TG-003 are locally complete; TG-004 is active and waiting for push and preview authorization. Merge and production/custom-domain operations remain separately gated.
+TSK-2 completed its approved implementation and preview-validation scope on 2026-07-18. Merge and production/custom-domain operations remain separately gated.

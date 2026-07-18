@@ -6,7 +6,7 @@
 | Branch       | `feat/TSK-2-demand-conversion`                        |
 | Pull request | —                                                     |
 | Owner        | Main agent                                            |
-| Status       | WAITING_DECISION                                      |
+| Status       | IN_PROGRESS                                           |
 | Updated      | 2026-07-18                                            |
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-2.
@@ -26,12 +26,12 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001
-- **Status:** IN_REVIEW
+- **Status:** DONE
 - **Outcome:** Accessible prerendered marketing page communicates the approved offer and conversion path.
 - **Requirements:** REQ-001, REQ-002, REQ-003, REQ-004, REQ-005, REQ-007, REQ-008, REQ-009
 - **Acceptance:** VAL-001, VAL-002, VAL-004, VAL-005
 - **Validation command:** `bun run check` plus responsive, keyboard, and JavaScript-disabled browser review.
-- **Evidence:** The prerendered page implements the approved buyer, problem, pilot offer, $49 hypothesis, RFC-safe qualified mailto flow, and truthful pilot terms. Tailwind 4.3.3 is the only UI system. Desktop and 390px screenshots were reviewed; Chromium passes axe, keyboard order, JavaScript-disabled, CTA, metadata, and horizontal-overflow checks. The remaining truthfulness decision is recorded below.
+- **Evidence:** The prerendered page implements the approved buyer, problem, pilot offer, $49 hypothesis, RFC-safe qualified mailto flow, and truthful pilot terms. Tailwind 4.3.3 is the only UI system. Desktop and 390px screenshots were reviewed; Chromium passes axe, keyboard order, JavaScript-disabled, CTA, metadata, and horizontal-overflow checks. GitHub confirms the linked repository is public.
 
 ## TG-003 — Measurement and Operating Ledger
 
@@ -46,22 +46,19 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 ## TG-004 — Preview Acceptance
 
-- **Owner:** Unassigned
+- **Owner:** Main agent
 - **Dependencies:** TG-002, TG-003
-- **Status:** WAITING_DECISION
+- **Status:** IN_PROGRESS
 - **Outcome:** The complete conversion slice passes quality, accessibility, truthfulness, privacy, and preview checks.
 - **Requirements:** All
 - **Acceptance:** VAL-007 and all prior validation evidence
 - **Validation command:** `bun run check`, browser acceptance, and approved preview smoke test.
-- **Evidence:** Local `bun run check` passes with 12 unit tests and three Playwright journeys. Preview acceptance cannot start until the repository-visibility decision below is resolved.
+- **Evidence:** Local `bun run check` passes with 12 unit tests and three Playwright journeys. Preview deployment and live event inspection remain separately gated.
 
-## Product Decision Required
+## Product Decision Resolved
 
-GitHub reports `bymilon/openapi-studio-tanstack` as private, but approved REQ-005 and the page promise a public repository/build. Choose one path before TG-002 can complete:
-
-1. Authorize changing the GitHub repository visibility to public; keep the CTA and change its label to “View source on GitHub.”
-2. Keep the repository private; revise REQ-005 and remove the repository CTA plus all “built in public” claims.
+The product owner authorized public visibility on 2026-07-18. GitHub reports `bymilon/openapi-studio-tanstack` as public, and the CTA explicitly says “View source on GitHub.”
 
 ## Ready Rule
 
-The specification was approved on 2026-07-18. Implementation is locally validated and paused at the repository-visibility decision. No push, preview deployment, visibility change, or merge is authorized by the implementation approval.
+The specification was approved on 2026-07-18. TG-001 through TG-003 are locally complete; TG-004 is active and waiting for push and preview authorization. Merge and production/custom-domain operations remain separately gated.

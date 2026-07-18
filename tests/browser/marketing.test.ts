@@ -33,7 +33,7 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
     'Would we pay $49/workspace/month if this worked? Why or why not?',
   )
   await expect(page.getByText('No checkout. No fake instant access.')).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Inspect the public build' })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: 'View source on GitHub' })).toHaveAttribute(
     'href',
     'https://github.com/bymilon/openapi-studio-tanstack',
   )

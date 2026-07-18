@@ -63,7 +63,7 @@ export function MarketingHome() {
               href="https://github.com/bymilon/openapi-studio-tanstack"
               onClick={() => recordConversion('repository_clicked')}
             >
-              Inspect the public build
+              View source on GitHub
               <span class="cta-arrow" aria-hidden="true">
                 ↗
               </span>

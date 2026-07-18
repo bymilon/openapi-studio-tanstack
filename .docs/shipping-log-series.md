@@ -31,8 +31,10 @@ Keep entries between 120 and 250 words. Write in first person. Include one scree
 
 ## Shipping Log 001
 
-**SHIPPING LOG 001**  
-**Date: 2026-07-19**  
+**SHIPPING LOG 001**
+
+**Date: 2026-07-19**
+
 **Position: public preview, $0 MRR**
 
 I restarted OpenAPI Studio from a clean repository.

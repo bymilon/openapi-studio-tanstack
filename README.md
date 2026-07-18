@@ -28,3 +28,5 @@ Runtime database access expects `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN`. Cop
 `bun run db:integration` is reserved for an approved disposable Turso database.
 
 `bun run deploy` is intentionally human-gated. Local development and CI require no production credentials.
+
+Pull requests and pushes to `main` run the same locked install, application checks, and local migration smoke test in GitHub Actions. Remote Turso credentials are not available to untrusted pull-request jobs.

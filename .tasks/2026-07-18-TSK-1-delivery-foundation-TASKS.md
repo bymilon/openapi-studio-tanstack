@@ -37,12 +37,13 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Main agent
 - **Dependencies:** TG-001, TG-002
-- **Status:** IN_PROGRESS
+- **Status:** WAITING_APPROVAL
 - **Outcome:** Local `check` and GitHub Actions enforce the approved build, code-quality, test, and migration gates.
 - **Requirements:** REQ-007, REQ-009
 - **Acceptance:** VAL-005, VAL-007
-- **Validation command:** `bun run check`
-- **Evidence:** —
+- **Validation command:** `bun run check`; then observe the required GitHub pull-request run and a temporary deliberately failing validation commit.
+- **Evidence:** Local `bun ci` and `bun run check` pass. The workflow uses SHA-pinned official actions, Bun 1.3.14, Ubuntu 24.04, read-only repository permissions, concurrency cancellation, a ten-minute timeout, no secrets, and no deployment job. Independent review found no workflow security blocker. VAL-005 still requires an observed pull-request run and deliberately failing validation commit.
+- **Approval needed:** Authorize pushing this feature branch and opening a pull request. The temporary failing validation commit will exist only on the feature branch and will be reverted after GitHub records the expected failure.
 
 ## TG-004 — Preview and Observability
 
@@ -57,7 +58,7 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 ## Ready Rule
 
-TSK-1 was approved on 2026-07-18. TG-003 is the active write group. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
+TSK-1 was approved on 2026-07-18. TG-003 is waiting for the external push/pull-request approval recorded above. Subagents may perform bounded read-only research and independent review; the main agent is the sole writer and ledger editor.
 
 ## Factory Evidence
 

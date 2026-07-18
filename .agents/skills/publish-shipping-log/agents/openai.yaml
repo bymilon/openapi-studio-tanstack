@@ -1,4 +1,4 @@
 interface:
-  display_name: "Publish Shipping Log"
-  short_description: "Create evidence-led shipping posts and heroes"
-  default_prompt: "Use $publish-shipping-log to draft and package the next OpenAPI Studio Shipping Log post."
+  display_name: 'Publish Shipping Log'
+  short_description: 'Create evidence-led shipping posts and heroes'
+  default_prompt: 'Use $publish-shipping-log to draft and package the next OpenAPI Studio Shipping Log post.'

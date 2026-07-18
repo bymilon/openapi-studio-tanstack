@@ -146,6 +146,11 @@ a:focus-visible {
 .site-footer a:focus-visible {
   outline-color: #cf2f1b;
 }
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #cf2f1b;
+  outline-offset: 4px;
+}
 
 .hero {
   display: grid;
@@ -153,6 +158,204 @@ a:focus-visible {
   gap: clamp(2.5rem, 4vw, 4.5rem);
   align-items: center;
   padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(4rem, 7vw, 6rem);
+}
+
+.compare-page {
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  background: #f5f5f3;
+}
+.compare-header {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d4d0ca;
+}
+.compare-mark {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: #fff;
+  background: #cf2f1b;
+  font-size: 0.62rem;
+  letter-spacing: -0.04em;
+}
+.compare-intro {
+  display: grid;
+  gap: 1.25rem;
+  padding-block: clamp(3rem, 7vw, 7rem);
+}
+.compare-intro h1 {
+  max-width: 14ch;
+}
+.compare-intro > p:last-child {
+  max-width: 48rem;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+}
+.compare-workspace {
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border: 1px solid #bdb8b1;
+  background: #fff;
+}
+.compare-workspace-head,
+.result-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.compare-workspace h2 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  letter-spacing: -0.035em;
+}
+.text-button {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  color: #171310;
+  background: transparent;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.file-grid {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.file-card {
+  display: grid;
+  min-width: 0;
+  min-height: 15rem;
+  align-content: start;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  border: 1px solid #171310;
+  cursor: pointer;
+}
+.file-card:hover {
+  background: #f2f0ec;
+}
+.file-number {
+  margin-bottom: 1.5rem;
+  color: #cf2f1b;
+  font-size: 2rem;
+  font-weight: 750;
+}
+.file-card strong {
+  font-size: 1.1rem;
+}
+.file-card > span:not(.file-number) {
+  min-height: 2.5rem;
+  color: #655f59;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.file-card input {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: auto;
+  font: inherit;
+  font-size: 0.76rem;
+}
+.compare-action {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.compare-action button {
+  cursor: pointer;
+}
+.compare-action p,
+.js-note,
+.coverage-note {
+  color: #655f59;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.js-note {
+  margin-top: 0.75rem;
+}
+.error-banner {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid #cf2f1b;
+  background: #f5e5e2;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.results {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 3px solid #171310;
+}
+.result-count {
+  color: #cf2f1b;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.8;
+}
+.change-list {
+  display: grid;
+  gap: 1px;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  background: #bdb8b1;
+  list-style: none;
+}
+.change-list li {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.4rem;
+  background: #f5f5f3;
+}
+.change-list li > code {
+  color: #655f59;
+  font-size: 0.7rem;
+  overflow-wrap: anywhere;
+}
+.change-context {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.change-context span {
+  padding: 0.25rem 0.4rem;
+  color: #fff;
+  background: #171310;
+  font-size: 0.68rem;
+  font-weight: 750;
+}
+.review-notes {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid #bdb8b1;
+}
+.review-notes p,
+.coverage-note {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .compare-workspace-head,
+  .result-summary,
+  .compare-action {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .file-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .hero-copy {
   display: flex;

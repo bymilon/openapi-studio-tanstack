@@ -4,7 +4,7 @@
 | --------------- | ------------------------------- |
 | Feature ID      | TSK-2                           |
 | Roadmap outcome | Phase 1 — Demand and Conversion |
-| Status          | SPEC_DRAFT                      |
+| Status          | SPEC_APPROVED                   |
 | Owner           | Product owner                   |
 | Updated         | 2026-07-18                      |
 
@@ -37,8 +37,8 @@ The page positions OpenAPI Studio as a safe workflow for editing, reviewing, and
 ## Interfaces and Boundaries
 
 - `/` is prerendered and contains the complete marketing page.
-- The design-partner CTA uses a configured public contact email and a fixed `mailto:` template. Missing contact configuration fails the build rather than rendering a broken CTA.
-- Analytics is loaded only after a separately approved provider/token decision. The page must remain fully functional when analytics is blocked.
+- The design-partner CTA uses the approved public contact email `pitechae@gmail.com` and a fixed `mailto:` template. The address is public product content, not a secret.
+- Analytics uses bounded first-party events written to existing Cloudflare Workers Logs. The page remains fully functional when analytics is blocked.
 - Funnel evidence belongs in an ignored local operating ledger or approved external system; Git contains only the empty template and aggregate, non-identifying results.
 - Tailwind utilities stay inside marketing components; repeated visual tokens belong in `src/styles.css`.
 
@@ -68,15 +68,16 @@ Phase 2 should not begin merely because the page ships. The initial evidence tar
 
 Deploy only to the existing preview Worker first. After content and analytics evidence are reviewed, a separately approved production/custom-domain operation may follow. Rollback reverts the marketing commit and redeploys the previous Worker version; no prospect database or billing state exists.
 
-## Proposed Decisions Requiring Approval
+## Approved Decisions
 
 - Positioning: safe OpenAPI editing, review, and publishing without contract corruption or documentation drift.
 - Buyer: small API teams and API-first software companies maintaining OpenAPI 3.0/3.1.
 - Offer: design-partner pilot followed by a $49/workspace/month price hypothesis.
 - Conversion: qualified `mailto:` contact flow, not a lead database.
 - UI: add `@tailwindcss/vite`; do not add Hono or a component library.
-- Analytics: provider and public token remain a separate decision before implementation of tracking.
+- Analytics: first-party bounded events in existing Cloudflare Workers Logs; no cookie, vendor SDK, or tracking token.
+- Public design-partner contact: `pitechae@gmail.com`.
 
 ## Approval Gate
 
-Implementation is not authorized while status is `SPEC_DRAFT`. The product owner must approve the positioning, offer, contact destination, qualification prompts, and analytics approach before any application code changes.
+The product owner approved the positioning, offer, contact destination, qualification prompts, Tailwind usage, and first-party analytics approach on 2026-07-18. Implementation is authorized. Preview deployment, merge, and production/custom-domain operations remain separately gated.

@@ -6,7 +6,7 @@
 | Branch       | `feat/TSK-2-demand-conversion`                        |
 | Pull request | —                                                     |
 | Owner        | Main agent                                            |
-| Status       | SPEC_REVIEW                                           |
+| Status       | WAITING_DECISION                                      |
 | Updated      | 2026-07-18                                            |
 
 Only this file owns execution status, assignment, dependencies, and evidence for TSK-2.
@@ -15,46 +15,53 @@ Only this file owns execution status, assignment, dependencies, and evidence for
 
 - **Owner:** Product owner
 - **Dependencies:** TSK-1, approved TSK-2 specification
-- **Status:** WAITING_APPROVAL
+- **Status:** DONE
 - **Outcome:** Lock one buyer, painful workflow, design-partner offer, contact destination, qualification prompts, and truthful claims.
 - **Requirements:** REQ-001, REQ-002, REQ-003, REQ-004
 - **Acceptance:** VAL-001, VAL-002
 - **Validation command:** Product content review against the approved specification.
-- **Evidence:** —
+- **Evidence:** Product owner approved the positioning, $49/workspace/month hypothesis, `pitechae@gmail.com` contact flow, qualification prompts, Tailwind, and first-party Cloudflare event logging on 2026-07-18.
 
 ## TG-002 — Marketing Page
 
-- **Owner:** Unassigned
+- **Owner:** Main agent
 - **Dependencies:** TG-001
-- **Status:** BACKLOG
+- **Status:** IN_REVIEW
 - **Outcome:** Accessible prerendered marketing page communicates the approved offer and conversion path.
 - **Requirements:** REQ-001, REQ-002, REQ-003, REQ-004, REQ-005, REQ-007, REQ-008, REQ-009
 - **Acceptance:** VAL-001, VAL-002, VAL-004, VAL-005
 - **Validation command:** `bun run check` plus responsive, keyboard, and JavaScript-disabled browser review.
-- **Evidence:** —
+- **Evidence:** The prerendered page implements the approved buyer, problem, pilot offer, $49 hypothesis, RFC-safe qualified mailto flow, and truthful pilot terms. Tailwind 4.3.3 is the only UI system. Desktop and 390px screenshots were reviewed; Chromium passes axe, keyboard order, JavaScript-disabled, CTA, metadata, and horizontal-overflow checks. The remaining truthfulness decision is recorded below.
 
 ## TG-003 — Measurement and Operating Ledger
 
-- **Owner:** Unassigned
 - **Dependencies:** TG-001, approved analytics decision
-- **Status:** BACKLOG
+- **Owner:** Main agent
+- **Status:** DONE
 - **Outcome:** Minimal privacy-conscious funnel events and a weekly aggregate evidence loop support positioning decisions.
 - **Requirements:** REQ-006, REQ-010
 - **Acceptance:** VAL-003, VAL-006
 - **Validation command:** Event payload inspection and operating-ledger review.
-- **Evidence:** —
+- **Evidence:** Strict Valibot events allow only page view, design-partner click, and repository click. The endpoint requires same-origin browser metadata, rejects unsupported content types and extra fields, and streams at most 64 bytes. Tests cover valid, schema-invalid, cross-origin, oversized, and unsupported requests. Analytics failure cannot block CTA behavior. `.docs/design-partner-operating-ledger.md` stores aggregates only.
 
 ## TG-004 — Preview Acceptance
 
 - **Owner:** Unassigned
 - **Dependencies:** TG-002, TG-003
-- **Status:** BACKLOG
+- **Status:** WAITING_DECISION
 - **Outcome:** The complete conversion slice passes quality, accessibility, truthfulness, privacy, and preview checks.
 - **Requirements:** All
 - **Acceptance:** VAL-007 and all prior validation evidence
 - **Validation command:** `bun run check`, browser acceptance, and approved preview smoke test.
-- **Evidence:** —
+- **Evidence:** Local `bun run check` passes with 12 unit tests and three Playwright journeys. Preview acceptance cannot start until the repository-visibility decision below is resolved.
+
+## Product Decision Required
+
+GitHub reports `bymilon/openapi-studio-tanstack` as private, but approved REQ-005 and the page promise a public repository/build. Choose one path before TG-002 can complete:
+
+1. Authorize changing the GitHub repository visibility to public; keep the CTA and change its label to “View source on GitHub.”
+2. Keep the repository private; revise REQ-005 and remove the repository CTA plus all “built in public” claims.
 
 ## Ready Rule
 
-No implementation task group is ready until the product owner approves the feature specification and supplies the public contact email. Analytics remains separately gated until its provider and public configuration are approved.
+The specification was approved on 2026-07-18. Implementation is locally validated and paused at the repository-visibility decision. No push, preview deployment, visibility change, or merge is authorized by the implementation approval.

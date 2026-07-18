@@ -26,7 +26,8 @@
     "@tanstack/solid-start": "1.168.30",
     "drizzle-orm": "0.45.2",
     "solid-js": "1.9.14",
-    "valibot": "1.4.2"
+    "valibot": "1.4.2",
+    "yaml": "2.9.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.12.1",

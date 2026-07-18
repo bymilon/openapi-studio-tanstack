@@ -42,12 +42,8 @@ export function MarketingHome() {
             <a class="nav-link nav-evidence" href="#evidence">
               Evidence
             </a>
-            <a
-              class="button button-dark button-compact"
-              href={applicationHref}
-              onClick={() => recordConversion('design_partner_clicked')}
-            >
-              Join research
+            <a class="button button-dark button-compact" href="/compare">
+              Try comparison
             </a>
           </nav>
         </header>
@@ -59,31 +55,26 @@ export function MarketingHome() {
             </p>
             <h1>Catch the breaking change before your users do.</h1>
             <p class="hero-lead">
-              We are testing whether small API teams need a clearer way to review OpenAPI contract
-              changes before we build the product workflow.
+              Compare a baseline and revised OpenAPI contract for high-confidence consumer breaks.
+              Files stay in your browser.
             </p>
             <div class="hero-actions">
-              <a
-                class="button button-dark"
-                href={applicationHref}
-                onClick={() => recordConversion('design_partner_clicked')}
-              >
-                Email the founder about the research <span aria-hidden="true">↗</span>
+              <a class="button button-dark" href="/compare">
+                Check a contract change <span aria-hidden="true">↗</span>
               </a>
               <a class="text-link" href="#workflow">
                 See the workflow <span aria-hidden="true">↓</span>
               </a>
             </div>
             <p class="availability">
-              Interviews are free. A product pilot and $29/workspace/month price are hypotheses.
-              They are not available yet.
+              Free public preview. No account, upload, persistence, or claim of exhaustive analysis.
             </p>
           </div>
 
           <figure class="contract-artifact" aria-labelledby="artifact-title">
             <div class="artifact-top">
               <div>
-                <p class="artifact-kicker">Illustrative product concept · not a live editor</p>
+                <p class="artifact-kicker">Product workflow · live comparison available</p>
                 <p id="artifact-title" class="artifact-title">
                   billing-api.yaml <span>PR #184</span>
                 </p>
@@ -175,12 +166,14 @@ export function MarketingHome() {
           </div>
           <div class="evidence-copy">
             <p>
-              OpenAPI Studio is in demand validation, not a working editor. Today’s repository
-              contains this website, delivery checks, preview infrastructure, and identifier-free
-              conversion measurement. OpenAPI 3.0/3.1 import, validation, diff review, and
-              publishing are roadmap work. They are not implemented yet. No invented customers. No
+              OpenAPI Studio now includes a browser-local comparison preview for a focused set of
+              high-confidence OpenAPI changes. Exhaustive validation, editing, saved projects,
+              publishing, collaboration, and billing are not implemented. No invented customers. No
               fake screenshots. No checkout.
             </p>
+            <a href="/compare">
+              Try the local comparison <span>↗</span>
+            </a>
             <a href={repositoryHref} onClick={() => recordConversion('repository_clicked')}>
               Follow the public build <span>↗</span>
             </a>

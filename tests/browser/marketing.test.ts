@@ -28,7 +28,7 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
     }),
   ).toBeVisible()
 
-  const application = page.getByRole('link', { name: 'Email the founder about the research' })
+  const application = page.getByRole('link', { name: 'Apply by email' })
   const applicationUrl = new URL((await application.getAttribute('href')) ?? '')
   expect(applicationUrl.protocol).toBe('mailto:')
   expect(applicationUrl.pathname).toBe('pitechae@gmail.com')
@@ -41,8 +41,8 @@ test('presents a truthful design-partner conversion path', async ({ page }) => {
   expect(applicationUrl.searchParams.get('body')).toContain(
     'Would we pay $29/workspace/month if this worked? Why or why not?',
   )
-  await expect(page.getByText('not a working editor')).toBeVisible()
-  await expect(page.getByText('roadmap work. They are not implemented yet')).toBeVisible()
+  await expect(page.getByText('browser-local comparison preview')).toBeVisible()
+  await expect(page.getByText('saved projects, publishing')).toBeVisible()
   await expect(page.getByText('Illustrative prototype. This is not a screenshot')).toBeVisible()
   await expect(page.getByText('Do not upload a contract or confidential material')).toBeVisible()
   const renderedContent = await page
@@ -71,7 +71,7 @@ test('has no detectable accessibility violations and a usable tab order', async 
   await page.keyboard.press('Tab')
   await expect(page.getByRole('link', { name: 'Evidence' })).toBeFocused()
   await page.keyboard.press('Tab')
-  await expect(page.getByRole('link', { name: 'Join research' })).toBeFocused()
+  await expect(page.getByRole('link', { name: 'Try comparison' })).toBeFocused()
 })
 
 test('keeps the offer usable on a narrow screen without JavaScript', async ({ browser }) => {
@@ -84,9 +84,7 @@ test('keeps the offer usable on a narrow screen without JavaScript', async ({ br
   await page.goto('/')
 
   await expect(page.getByRole('main')).toBeVisible()
-  await expect(
-    page.getByRole('link', { name: 'Email the founder about the research' }),
-  ).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Check a contract change' })).toBeVisible()
   await expect(page.getByText('price hypothesis')).toBeVisible()
   expect((await page.locator('body').evaluate((body) => body.scrollWidth)) <= 360).toBe(true)
 
